@@ -1,0 +1,18 @@
+{
+    "gt_file": "/home/yashturkar/Downloads/warehouse_change_gt.ply",
+    "cnd_file": [
+        "/home/yashturkar/Downloads/warehouse_change_missing_pallet1.ply"
+        
+    ],
+    "save_path": "./results/warehouse_change/",
+    "cell_size": [
+        20
+    ],
+    "weights": [ 
+        [0.25,0.25, 0.25,0.25]
+    ],
+    "eps": [
+        5
+    ]
+
+}
