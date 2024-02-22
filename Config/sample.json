@@ -1,18 +1,18 @@
 {
-    "gt_file": "/home/yashturkar/Downloads/warehouse_change_gt.ply",
+    "gt_file": "<reference / gt point cloud path here>",
     "cnd_file": [
-        "/home/yashturkar/Downloads/warehouse_change_missing_pallet1.ply"
+        "<candidate point cloud path here, add multiple seperated by ,>"
         
     ],
-    "save_path": "./results/warehouse_change/",
+    "save_path": "./results/",
     "cell_size": [
-        20
+        "<set cell size, int>"
     ],
     "weights": [ 
         [0.25,0.25, 0.25,0.25]
     ],
     "eps": [
-        5
+        "<set eps, float>"
     ]
 
 }

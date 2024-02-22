@@ -1,4 +1,4 @@
-name: pqm-x
+name: pqm_env
 channels:
   - pytorch
   - defaults

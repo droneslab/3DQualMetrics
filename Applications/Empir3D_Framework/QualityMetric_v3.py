@@ -2,22 +2,9 @@
 import sys
 import os
 
-print ("Using QualityMetric_v3.py")
-
-# getting the name of the directory
-# where the this file is present.
 current = os.path.dirname(os.path.realpath(__file__))
 
 sys.path.append(current)
-# Getting the parent directory name
-# where the current directory is present.
-#parent = os.path.dirname(current)
-
-#print("Parent Path: ", parent)
-# adding the parent directory to
-# the sys.path.
-#sys.path.append(parent)
-
 
 
 #
@@ -26,31 +13,12 @@ import numpy as np
 from sklearn.neighbors import KDTree
 
 
-# from PQM.utils import calculate_average_distance, calculate_Bvalid_dist, build_KDTree
-# from PQM.utils import generate_3dcube_points_centers
-
-# from PQM.QualityMetric_v1 import calculate_artifacts_metric
-
-# from PQM.QualityMetric_v1 import calculate_accuracy_metric
-
-# from PQM.QualityMetric_v2 import calculate_resolution_metric
-
 def calculate_Bvalid_index(pcdA_np,pcdB_np,e):
-    # pcdA -> ref
-    # pcdB -> cand
-    # distances of valid points in pcdB
-    # pcdA = np.asarray(pcdA.points)
-    # pcdB = np.asarray(pcdB.points)
     treeA = KDTree(pcdA_np)
-    #treeB = KDTree(pcdB)
-    # Find the nearest neighbor in pcdA for each point in pcdB
     distB, indB = treeA.query(pcdB_np, k=1)
     # Find valid points based on threshold e
     validBind = indB[distB<e]
     return validBind
-
-import time 
-
 
 def calculate_subvoxel_indices(point_cloud, min_bound, e):
     return np.floor((point_cloud - min_bound) / e).astype(int)
@@ -75,69 +43,26 @@ def calculate_coverage(point_cloud_1, point_cloud_2, min_bound, e):
     count_ref, count_cand, count_both = len(subvoxel_indices_set_pc1), len(subvoxel_indices_set_pc2), len(covered_index)
 
     return coverage, count_ref, count_cand, count_both, len(cand_only_indices)
-    # Return the counts
-    # return len(covered_subvoxel_indices), len(unique_subvoxel_indices_pc1), len(unique_subvoxel_indices_pc2)
 
-
-
-
-
-
-# ## New implementation for resolution metric based on avg distance between points
-# def calculate_resolution_metric(pcdA,pcdB):
-#     # pcdA -> ref
-#     # pcdB -> cand
-#     # Normalized resolution score
-#     # Calculate the average distance between points in pcdA
-#     avgDistA = calculate_average_distance(pcdA)
-#     avgDistB = calculate_average_distance(pcdB)
-    
-#     if avgDistB == 0:
-#         #Pranay: TODO : Please check, This is a hack to avoid division by zero
-#         avgDistB = 1e-6 
-
-#     resRatio = avgDistA/avgDistB
-
-#     # print ("Res ratio: ", resRatio)
-
-#     return resRatio
 
 from sklearn.neighbors import KDTree
 
 def build_KDTree_np(pcd_np):
-    # Build KDTree for point cloud pcd
-    #points = np.asarray(pcd.points)
     tree = KDTree(pcd_np)
     return tree
 
 
 def calculate_Bvalid_dist_np(pcdB,e, treeA):
-    # pcdA -> ref
-    # pcdB -> cand
-    # distances of valid points in pcdB
-
-    # treeA = KDTree(pcdA)
-    #treeB = KDTree(pcdB)
-    # Find the nearest neighbor in pcdA for each point in pcdB
     distB, indB = treeA.query(pcdB, k=1)
     # Find valid points based on threshold e
     validB = distB[distB<e]
     return validB
 def calculate_artifacts_metric_np(pcdB,validB_count):
-    # pcdA -> ref
-    # pcdB -> cand
-    # Normalized artifact score
-    # validB_count = calculate_Bvalid_count(pcdA,pcdB,e)
     return (validB_count/len(pcdB))
 
 def calculate_average_distance_np(pointsA, treeA):
-    # pcdA -> ref
-    # Calculate the average distance between points in pcdA
-    
-    #print("shape of pointsA: ", pointsA.shape)
     if len(pointsA) < 2:
         return 0
-    # treeA = KDTree(pointsA)
     # Find the nearest neighbor in pcdA for each point in pcdA
     distA, indA = treeA.query(pointsA, k=2)
     # Calculate the average distance between points in pcdA
@@ -146,42 +71,23 @@ def calculate_average_distance_np(pointsA, treeA):
 
 ## New implementation for resolution metric based on avg distance between points
 def calculate_resolution_metric_np(pcdA,pcdB,treeA,treeB, e):
-    # pcdA -> ref
-    # pcdB -> cand
-    # Normalized resolution score
     # Calculate the average distance between points in pcdA
     avgDistA = calculate_average_distance_np(pcdA,treeA)
-    # avgDistA = calculate_average_distance(pcdA)
+
     avgDistB = calculate_average_distance_np(pcdB,treeB)
-    # print ("Avg dist A: ", avgDistA)
-    # print ("Avg dist A: ", avgDistA)
-    # Return ratio between e and minDistB
-    # resRatio = 0
-    # if e/avgDistB < 1:
-    #     # resRatio = e / minDistB
-    #     resRatio = avgDistB / avgDistA
-    # else:
-    #     resRatio = 1
+
     if avgDistB == 0:
         avgDistB = (np.sqrt(3) *e)/2
     if avgDistA > avgDistB:
         return 1.0
 
     resRatio = avgDistA/avgDistB
-
-    # print ("Res ratio: ", resRatio)
-
     return resRatio
 
 
 
 
 def cluster_by_voxel(point_cloud, e, min_bound):
-    # point_cloud = np.asarray(pcd.points)
-
-    # if min_bound is None:
-    #     bbox = pcd.get_axis_aligned_bounding_box()
-    #     min_bound = np.asarray(bbox.min_bound)
     
     ind_voxel = np.floor((point_cloud - min_bound) / e).astype(int)
     
@@ -196,9 +102,6 @@ def cluster_by_voxel(point_cloud, e, min_bound):
     unique_tuples = ind_voxel[np.unique(unique_indices, return_index=True)[1]]
 
     voxel_to_index = {tuple(unique_tuple): index for index, unique_tuple in enumerate(unique_tuples)}
-
-    #print("tuple_to_index", voxel_to_index)
-    
 
     # Convert back to original array shape
     unique_voxels = unique_structs.view(ind_voxel.dtype).reshape(-1, ind_voxel.shape[1])
@@ -215,9 +118,7 @@ def cluster_by_voxel(point_cloud, e, min_bound):
 
 ## New implementation for resolution metric based on avg distance between points
 def get_covered_points(pcd_gt_np, pcd_cand_np,e, min_bound):
-    # pcdA -> ref
-    # pcdB -> cand
-    # Normalized resolution score
+
     # Calculate the average distance between points in pcdA
 
     ind_gt, ind_voxel_gt, voxel_min_bounds_gt = cluster_by_voxel(pcd_gt_np, e, min_bound)
@@ -252,7 +153,6 @@ def calculate_accuracy_metric_np(pcdB,e,validB_dist):
     # pcdB -> cand
     # Normalized accuracy score
     # Find the nearest neighbor in pcdB for each point in pcdA
-    # validB_dist = calculate_Bvalid_dist(pcdA,pcdB,e)
     normAcc = 1-(validB_dist.sum() / (len(pcdB)* e))
     return normAcc
 
@@ -262,11 +162,6 @@ def calculate_quality_metric(pcdA_np, pcdB_np, e, cell_size, min_bound):
     # Normalized complete quality score
     #calculate the accuracy metric
     count_ref, count_both, count_cand_only  = 0,0,0
-
-    #print("len(pcdA_np): ", len(pcdA_np))
-    #print("len(pcdB_np): ", len(pcdB_np))
-    #if bboxA is None:
-    #    bboxA = pcdA_np.get_axis_aligned_bounding_box()
     if len(pcdA_np) == 0 and len(pcdB_np) == 0: #case 1: if both the pointclouds are empty
         normAcc = -1
         normArt = 1
@@ -279,16 +174,7 @@ def calculate_quality_metric(pcdA_np, pcdB_np, e, cell_size, min_bound):
         treeA = build_KDTree_np(pcdA_np)
         treeB = build_KDTree_np(pcdB_np)
 
-
-        # Testing coverage metric
-        #normCov, count_ref, count_cand = calculate_coverage(treeA,treeB, bboxA, e=e)
         normCov, count_ref, count_cand, count_both, count_cand_only = calculate_coverage(pcdA_np, pcdB_np, min_bound, e=e)
-        # Calculate the artifacts metric
-        #normArt = calculate_artifacts_metric_np(pcdB_np, validB_count)
-
-        #Using subvoxel indices 
-        # normArt = count_both / count_cand
-
         if count_cand_only == 0:
             normArt = 1
         else:

@@ -1,12 +1,6 @@
 import sys,os
 sys.path.append(os.getcwd())
 
-# pqm_version = os.environ.get('PQM_VERSION')
-# if pqm_version == '1.0':
-#     from PQM.QualityMetric_v1 import  calculate_quality_metric
-# elif pqm_version == '2.0':
-#     from PQM.QualityMetric_v2 import  calculate_quality_metric
-# elif pqm_version == '3.0':
 from QualityMetric_v3 import  calculate_quality_metric
 import numpy as np
 import open3d as o3d
@@ -62,26 +56,12 @@ class MapCell:
         self.compute_flag = compute_flag
         self.metric_fn = metric_fn
         if fill_metrics:
-            # if pqm_version == '3.0':
             self.metrics[COMPELTENESS_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR], self.metrics[COMPELTENESS_REF_STR], self.metrics[COMPELTENESS_BOTH_INTERSECTION_STR], self.metrics[COMPELTENESS_CAND_ONLY_STR] = self.compute_metric_v3(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR],  cell_size=cell_size, min_bound=min_bound)  
-            # else:
-            #     self.metrics[COMPELTENESS_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR] = self.compute_metric(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR])        
+            self.metrics[QUALITY_STR]  = self.metrics[COMPELTENESS_STR] * options[WEIGHT_COMPLETENESS_STR] + self.metrics[ARTIFACTS_STR] * options[WEIGHT_ARTIFACTS_STR] + self.metrics[RESOLUTION_STR] * options[WEIGHT_RESOLUTION_STR] + self.metrics[ACCURACY_STR] * options[WEIGHT_ACCURACY_STR]     
 
-            self.metrics[QUALITY_STR]  = self.metrics[COMPELTENESS_STR] * options[WEIGHT_COMPLETENESS_STR] + self.metrics[ARTIFACTS_STR] * options[WEIGHT_ARTIFACTS_STR] + self.metrics[RESOLUTION_STR] * options[WEIGHT_RESOLUTION_STR] + self.metrics[ACCURACY_STR] * options[WEIGHT_ACCURACY_STR]
-
-            #NOTE: Pranay: Old way was checking if both pcds are empty and do addtional constratints. TO make quality computation call generic I an removing this check, as it is handeled in the quality metric function as per version.
-            # if not pointcloud_gt.is_empty() and not pointcloud_cnd.is_empty():
-            #     self.metrics[QUALITY_STR], self.metrics[COMPELTENESS_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR]= calculate_complete_quality_metric(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR], options[WEIGHT_COMPLETENESS_STR], options[WEIGHT_ARTIFACTS_STR], options[WEIGHT_RESOLUTION_STR], options[WEIGHT_ACCURACY_STR],self.compute_flag)
-            # else:
-            #     self.metrics[COMPELTENESS_STR] = 0
-            #     self.metrics[ARTIFACTS_STR] = 0.0
-            #     self.metrics[RESOLUTION_STR] = 0.0
-            #     self.metrics[ACCURACY_STR] = 0
-            #     self.metrics[QUALITY_STR] = 0.0             
-
-            self.metrics[CHAMFER_STR] = -1 # calculate_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
-            self.metrics[NORMALIZED_CHAMFER_STR] = -1 #calculate_normalized_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
-            self.metrics[HOUSDORFF_STR] = -1 #calculate_hausdorff_distance_metric(pointcloud_gt, pointcloud_cnd)
+            # self.metrics[CHAMFER_STR] = -1 # calculate_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
+            # self.metrics[NORMALIZED_CHAMFER_STR] = -1 #calculate_normalized_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
+            # self.metrics[HOUSDORFF_STR] = -1 #calculate_hausdorff_distance_metric(pointcloud_gt, pointcloud_cnd)
 
     def compute_metric_v3(self, pointcloud_gt, pointcloud_cnd, eps,  cell_size, min_bound):
         # cell_size = bbox_gt.get_extent()[0]
@@ -312,6 +292,7 @@ class MapMetricManager_base:
     def compute_metric_prev(self, filename="test.json"):
         st_time = time.time()
         #iterate through all the Cells
+        print ("Using this version of compute_metric")
         numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
         print("Number of Iterations: ", numIter)
         for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Computing Metrics"):
@@ -370,14 +351,14 @@ class MapMetricManager_base:
         # metric_results[DENSITY_GT_STR] = calculate_density(self.pointcloud_GT)
         # metric_results[DENSITY_CND_STR] = calculate_density(self.pointcloud_Cnd)
 
-        metric_results[CHAMFER_STR]=  -1 # calculate_chamfer_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
-        metric_results[NORMALIZED_CHAMFER_STR]=  -1 #calculate_normalized_chamfer_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
-        metric_results[HOUSDORFF_STR]=  -1 #calculate_hausdorff_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
-        print("================Summary======================")
-        print("Our Metric: ", metric_results[AVERAGE_STR][QUALITY_STR])
-        print("Chamfer Metric: ", metric_results[CHAMFER_STR])
-        print("Normalized Chamfer Metric: ", metric_results[NORMALIZED_CHAMFER_STR])
-        print("Hausdorff Metric: ", metric_results[HOUSDORFF_STR])
+        # metric_results[CHAMFER_STR]=  -1 # calculate_chamfer_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
+        # metric_results[NORMALIZED_CHAMFER_STR]=  -1 #calculate_normalized_chamfer_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
+        # metric_results[HOUSDORFF_STR]=  -1 #calculate_hausdorff_distance_metric(self.pointcloud_GT, self.pointcloud_Cnd)
+        # print("================Summary======================")
+        # print("Our Metric: ", metric_results[AVERAGE_STR][QUALITY_STR])
+        # print("Chamfer Metric: ", metric_results[CHAMFER_STR])
+        # print("Normalized Chamfer Metric: ", metric_results[NORMALIZED_CHAMFER_STR])
+        # print("Hausdorff Metric: ", metric_results[HOUSDORFF_STR])
 
         if filename is not None:
             with open(filename, 'w+') as fp:
@@ -399,14 +380,6 @@ class MapMetricManager_base:
         numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
         print("Number of Iterations: ", numIter)
         for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Generating Jobs"):
-        # for min_cell_index, max_cell_index in self.iterate_cells():
-            
-            # if pqm_version == '3.0':
-            #     cropped_gt, bbox_gt = get_cropped_point_cloud_np(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            #     cropped_candidate, bbox_cnd = get_cropped_point_cloud_np(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            #     gt_is_empty = len(cropped_gt)
-            #     cand_is_empty = len(cropped_candidate)
-            # else:
             cropped_gt, bbox_gt = get_cropped_point_cloud(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
             cropped_candidate, bbox_cnd = get_cropped_point_cloud(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
             gt_is_empty = cropped_gt.is_empty()
@@ -414,9 +387,9 @@ class MapMetricManager_base:
             if gt_is_empty and cand_is_empty:
                 pass
             else:
-                if pqm_version == '3.0':
-                    cropped_gt = np.asarray(cropped_gt.points)
-                    cropped_candidate = np.asarray(cropped_candidate.points)
+
+                cropped_gt = np.asarray(cropped_gt.points)
+                cropped_candidate = np.asarray(cropped_candidate.points)
                 job.append(Process(target=f, args=(d, min_cell_index,cropped_gt, cropped_candidate, bbox_gt, bbox_cnd)))
                 #job[-1].start()
                 

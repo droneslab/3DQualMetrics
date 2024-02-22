@@ -5,16 +5,9 @@ from Applications.Empir3D_Framework.system_constants import *
 
 from Applications.Empir3D_Framework.MapMetricManager_base import MapMetricManager_base, MapCell
 
-#NOTE: Pranay: Important import, this is to select the version of PQM to use
-# pqm_version = os.environ.get('PQM_VERSION')
-# if pqm_version == '1.0':
-#     from PQM.QualityMetric_v1 import  calculate_quality_metric
-# elif pqm_version == '2.0':
-#     from PQM.QualityMetric_v2 import  calculate_quality_metric
-# elif pqm_version == '3.0':
+
 from QualityMetric_v3 import  calculate_quality_metric
 
-#NOTE: Pranay: This version of MMM is only tested for PQM 3.0
 
 
 
@@ -89,8 +82,8 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
 
     
     print("Number of Iterations: ", len(ind_all_voxel))
-    print("Number of GT Voxels: ", len(ind_voxel_gt_key))
-    print("Number of Cand Voxels: ", len(ind_voxel_cand_key))
+    # print("Number of GT Voxels: ", len(ind_voxel_gt_key))
+    # print("Number of Cand Voxels: ", len(ind_voxel_cand_key))
     for i, voxel in tqdm(enumerate(ind_all_voxel), total=len(ind_all_voxel), desc="Calculating Quality Metric"):
         voxel_min_bound =None
         if tuple(voxel) not in ind_voxel_gt:
@@ -112,6 +105,8 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
 
     num_cores = 8
     print("Number of Jobs: ", len(job))
+    print("Number of Cores: ", num_cores)
+    print ("\n")
     for i, _ in tqdm(enumerate(range(0, len(job), num_cores)), total=int(len(job)/num_cores), desc="Running Jobs"):
         _ = [p.start() for p in job[i:i+num_cores]]
         _ = [p.join() for p in job[i:i+num_cores]]
@@ -123,7 +118,7 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
     _ = [p.join() for p in job]
     metriccells= copy.deepcopy(d)
 
-    print("Number of Cells: ", len(metriccells))
+    # print("Number of Cells: ", len(metriccells))
 
     return metriccells, ind_gt, ind_voxel_gt
 
@@ -147,7 +142,7 @@ class MapMetricManager_v3(MapMetricManager_base):
 
     def compute_metric(self, filename ="results/test.json"):
 
-        print("Computing Metric V3...")
+        # print("Computing Metric V3...")
         st_time = time.time()
         self.metriccells, self.voxel_to_index, self.voxels= compute_parallel_metric(self.pointcloud_GT, self.pointcloud_Cnd, self.options, self.cell_size, self.min_bound, self.metric_fn)
 
@@ -201,11 +196,11 @@ class MapMetricManager_v3(MapMetricManager_base):
                     average_metric = 1
                 else:
                     average_metric =1 - (metric_list_cand/(metric_list_cand+metric_list_both_intersection)) 
-            else:
-                average_metric = np.mean(metric_list)
+            # else:
+            #     average_metric = np.mean(metric_list)
             print("Average ", metric, ": ", average_metric)
             metric_var = np.var(metric_list)
-            print("Variance for ", metric, ": ", metric_var)
+            # print("Variance for ", metric, ": ", metric_var)
             metric_results[AVERAGE_STR][metric] = average_metric
             metric_results[VARIANCE_STR][metric] = metric_var
 
