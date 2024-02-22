@@ -49,7 +49,7 @@ def main():
     damage_pcd = damage_manager.damage_point_cloud(args.damage, damage_params)
     if args.visualize:
         damage_manager.savePointcloud(damage_pcd, args.output)
-        metric_options = {WEIGHT_COMPLETENESS_STR:0.1, WEIGHT_ARTIFACTS_STR:0.1, WEIGHT_ACCURACY_STR:0.4,WEIGHT_RESOLUTION_STR:0.4, EPSILON_STR: 0.1}
+        metric_options = {WEIGHT_coverage_STR:0.1, WEIGHT_ARTIFACTS_STR:0.1, WEIGHT_ACCURACY_STR:0.4,WEIGHT_RESOLUTION_STR:0.4, EPSILON_STR: 0.1}
 
         metric_manager = MapMetricManager(args.pcd, args.output, args.size, metric_options)
 

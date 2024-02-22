@@ -38,6 +38,7 @@ def main():
     # elif parser.parse_args().cpu_multi:
     #     compute_flag = 4
 
+    os.environ['e3d_cores'] = '8'
     
     config = {}
     with open(args.config, mode='r') as fp:

@@ -45,14 +45,14 @@ def main():
         normalized_chamfer_distance = data['normalized_chamfer']
         size = data['cell_size']
         options = data['options']
-        completeness = data['average']['completeness']
+        coverage = data['average']['coverage']
         artifact_score = data['average']['artifacts']
         resolution = data['average']['resolution']
         accuracy = data['average']['accuracy']
         quality = data['average']['quality']
         variance = data['variance']
         # Add data to dataframe using pandas concat
-        df = pd.concat([df, pd.DataFrame({'file_name': [file_name], 'cell_size' : [size] , 'chamfer_distance': [chamfer_distance], 'hausdorff_distance': [hausdorff_distance], 'total_gt_points': [total_gt_points], 'total_cnd_points': [total_cnd_points], 'normalized_chamfer_distance': [normalized_chamfer_distance], 'options': [options], 'completeness': [completeness] , 'artifact_score': [artifact_score] , 'resolution':[resolution] , 'accuracy':[accuracy], 'quality':[quality] , 'variance':[variance] })], ignore_index=True)
+        df = pd.concat([df, pd.DataFrame({'file_name': [file_name], 'cell_size' : [size] , 'chamfer_distance': [chamfer_distance], 'hausdorff_distance': [hausdorff_distance], 'total_gt_points': [total_gt_points], 'total_cnd_points': [total_cnd_points], 'normalized_chamfer_distance': [normalized_chamfer_distance], 'options': [options], 'coverage': [coverage] , 'artifact_score': [artifact_score] , 'resolution':[resolution] , 'accuracy':[accuracy], 'quality':[quality] , 'variance':[variance] })], ignore_index=True)
     # Save dataframe as csv file
     df.to_csv(save_path, index=False)
 

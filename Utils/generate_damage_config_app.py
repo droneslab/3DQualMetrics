@@ -70,7 +70,7 @@ def main():
             eps = avg_dist/2
 
 
-        metric_options = {WEIGHT_COMPLETENESS_STR: weights[0], WEIGHT_ARTIFACTS_STR: weights[1], WEIGHT_ACCURACY_STR: weights[2],WEIGHT_RESOLUTION_STR: weights[3], EPSILON_STR: eps}
+        metric_options = {WEIGHT_coverage_STR: weights[0], WEIGHT_ARTIFACTS_STR: weights[1], WEIGHT_ACCURACY_STR: weights[2],WEIGHT_RESOLUTION_STR: weights[3], EPSILON_STR: eps}
 
 
 

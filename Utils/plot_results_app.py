@@ -15,7 +15,7 @@ def filter_by_attribute(data, attributes, attribute_name, attribute_value):
 
     # filter damage type as gaussian
     new_data = {}
-    new_data[COMPELTENESS_STR]=[]
+    new_data[COVERAGE_STR]=[]
     new_data[ACCURACY_STR]=[]
     new_data[ARTIFACTS_STR]=[]
     new_data[RESOLUTION_STR]=[]
@@ -27,7 +27,7 @@ def filter_by_attribute(data, attributes, attribute_name, attribute_value):
 
     for attrib_row in attributes:
         if attrib_row[attribute_name] == attribute_value:
-            new_data[COMPELTENESS_STR].append(data[COMPELTENESS_STR][attributes.index(attrib_row)])
+            new_data[COVERAGE_STR].append(data[COVERAGE_STR][attributes.index(attrib_row)])
             new_data[ACCURACY_STR].append(data[ACCURACY_STR][attributes.index(attrib_row)])
             new_data[ARTIFACTS_STR].append(data[ARTIFACTS_STR][attributes.index(attrib_row)])
             new_data[RESOLUTION_STR].append(data[RESOLUTION_STR][attributes.index(attrib_row)])
@@ -47,7 +47,7 @@ def main():
     args = parser.parse_args()
 
     data = {}
-    data[COMPELTENESS_STR]=[]
+    data[COVERAGE_STR]=[]
     data[ACCURACY_STR]=[]
     data[ARTIFACTS_STR]=[]
     data[RESOLUTION_STR]=[]
@@ -67,7 +67,7 @@ def main():
                 attrib_dict[CELL_SIZE_STR] = data_load[CELL_SIZE_STR]
                
                 attrib_dict[WEIGHT_ACCURACY_STR] = data_load[CONFIG_OPTIONS_STR][WEIGHT_ACCURACY_STR]
-                attrib_dict[WEIGHT_COMPLETENESS_STR] = data_load[CONFIG_OPTIONS_STR][WEIGHT_COMPLETENESS_STR]
+                attrib_dict[WEIGHT_coverage_STR] = data_load[CONFIG_OPTIONS_STR][WEIGHT_coverage_STR]
                 attrib_dict[WEIGHT_ARTIFACTS_STR] = data_load[CONFIG_OPTIONS_STR][WEIGHT_ARTIFACTS_STR]
                 attrib_dict[WEIGHT_RESOLUTION_STR] = data_load[CONFIG_OPTIONS_STR][WEIGHT_RESOLUTION_STR]
                 attrib_dict[EPSILON_STR] = data_load[CONFIG_OPTIONS_STR][EPSILON_STR]
@@ -78,7 +78,7 @@ def main():
                 attrib_dict[CONFIG_DAMAGE_PARAMS_STR] = float(damage_param)
                 attributes.append(attrib_dict)
 
-                data[COMPELTENESS_STR].append(data_load[AVERAGE_STR][COMPELTENESS_STR])
+                data[COVERAGE_STR].append(data_load[AVERAGE_STR][COVERAGE_STR])
                 data[ACCURACY_STR].append(data_load[AVERAGE_STR][ACCURACY_STR])
                 data[ARTIFACTS_STR].append(data_load[AVERAGE_STR][ARTIFACTS_STR])
                 data[RESOLUTION_STR].append(data_load[AVERAGE_STR][RESOLUTION_STR])
@@ -92,13 +92,13 @@ def main():
                 #print("attributes: ", attributes)
 
     # Filter data base on attributes
-    # attributes = [CELL_SIZE_STR, WEIGHT_ACCURACY_STR, WEIGHT_COMPLETENESS_STR, WEIGHT_ARTIFACTS_STR, WEIGHT_RESOLUTION_STR, EPSILON_STR, CONFIG_GT_FILE_STR, CONFIG_DAMAGE_STR, CONFIG_DAMAGE_PARAMS_STR]
+    # attributes = [CELL_SIZE_STR, WEIGHT_ACCURACY_STR, WEIGHT_coverage_STR, WEIGHT_ARTIFACTS_STR, WEIGHT_RESOLUTION_STR, EPSILON_STR, CONFIG_GT_FILE_STR, CONFIG_DAMAGE_STR, CONFIG_DAMAGE_PARAMS_STR]
     print("Filtering data based on attributes")
     
     damage_type_to_metric_map = {
         GAUSSIAN_STR: ACCURACY_STR,
         ADD_POINTS_STR: ARTIFACTS_STR,
-        REMOVE_POINTS_STR: COMPELTENESS_STR,
+        REMOVE_POINTS_STR: COVERAGE_STR,
         DOWNSAMPLE_STR: RESOLUTION_STR
     }
 
@@ -119,7 +119,7 @@ def main():
             damage_list.append(attrib[CONFIG_DAMAGE_PARAMS_STR])
 
         #sort data based on damage param
-        new_data[COMPELTENESS_STR] = [x for _,x in sorted(zip(damage_list, new_data[COMPELTENESS_STR]))]
+        new_data[COVERAGE_STR] = [x for _,x in sorted(zip(damage_list, new_data[COVERAGE_STR]))]
         new_data[ACCURACY_STR] = [x for _,x in sorted(zip(damage_list, new_data[ACCURACY_STR]))]
         new_data[ARTIFACTS_STR] = [x for _,x in sorted(zip(damage_list, new_data[ARTIFACTS_STR]))]
         new_data[RESOLUTION_STR] = [x for _,x in sorted(zip(damage_list, new_data[RESOLUTION_STR]))]
@@ -133,13 +133,13 @@ def main():
         plt.figure(figsize=(15,15))
         plt.plot(damage_list, new_data[QUALITY_STR])
         plt.plot(damage_list, new_data[ACCURACY_STR])    
-        plt.plot(damage_list, new_data[COMPELTENESS_STR])
+        plt.plot(damage_list, new_data[COVERAGE_STR])
         plt.plot(damage_list, new_data[ARTIFACTS_STR])
         plt.plot(damage_list, new_data[RESOLUTION_STR])
         plt.xlabel("Damage Parameter : {}".format(damage_type_to_string_map[damage_type]))
         plt.ylabel("Metric")
         plt.title("Damage Type : {}".format(damage_type))
-        plt.legend([QUALITY_STR, ACCURACY_STR, COMPELTENESS_STR, ARTIFACTS_STR, RESOLUTION_STR])
+        plt.legend([QUALITY_STR, ACCURACY_STR, COVERAGE_STR, ARTIFACTS_STR, RESOLUTION_STR])
 
 
         plt.savefig(os.path.join(plots_path,"{}_All.png".format(damage_type)))

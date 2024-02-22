@@ -54,8 +54,8 @@ def main():
     metric = None
     if args.metric == "quality":
         metric = QUALITY_STR
-    elif args.metric == "completeness":
-        metric = COMPELTENESS_STR
+    elif args.metric == "coverage":
+        metric = COVERAGE_STR
     elif args.metric == "accuracy":
         metric = ACCURACY_STR
     elif args.metric == "resolution":

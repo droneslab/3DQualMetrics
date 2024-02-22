@@ -56,8 +56,8 @@ class MapCell:
         self.compute_flag = compute_flag
         self.metric_fn = metric_fn
         if fill_metrics:
-            self.metrics[COMPELTENESS_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR], self.metrics[COMPELTENESS_REF_STR], self.metrics[COMPELTENESS_BOTH_INTERSECTION_STR], self.metrics[COMPELTENESS_CAND_ONLY_STR] = self.compute_metric_v3(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR],  cell_size=cell_size, min_bound=min_bound)  
-            self.metrics[QUALITY_STR]  = self.metrics[COMPELTENESS_STR] * options[WEIGHT_COMPLETENESS_STR] + self.metrics[ARTIFACTS_STR] * options[WEIGHT_ARTIFACTS_STR] + self.metrics[RESOLUTION_STR] * options[WEIGHT_RESOLUTION_STR] + self.metrics[ACCURACY_STR] * options[WEIGHT_ACCURACY_STR]     
+            self.metrics[COVERAGE_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR], self.metrics[COMPELTENESS_REF_STR], self.metrics[COMPELTENESS_BOTH_INTERSECTION_STR], self.metrics[COMPELTENESS_CAND_ONLY_STR] = self.compute_metric_v3(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR],  cell_size=cell_size, min_bound=min_bound)  
+            self.metrics[QUALITY_STR]  = self.metrics[COVERAGE_STR] * options[WEIGHT_coverage_STR] + self.metrics[ARTIFACTS_STR] * options[WEIGHT_ARTIFACTS_STR] + self.metrics[RESOLUTION_STR] * options[WEIGHT_RESOLUTION_STR] + self.metrics[ACCURACY_STR] * options[WEIGHT_ACCURACY_STR]     
 
             # self.metrics[CHAMFER_STR] = -1 # calculate_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
             # self.metrics[NORMALIZED_CHAMFER_STR] = -1 #calculate_normalized_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
@@ -103,7 +103,7 @@ def parse_mapmetric_config(config_file):
 
 
 class MapMetricManager_base:
-    def __init__(self, gt_file, cnd_file, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_COMPLETENESS_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}, compute_flag=1, metric_fn = calculate_quality_metric):
+    def __init__(self, gt_file, cnd_file, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_coverage_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}, compute_flag=1, metric_fn = calculate_quality_metric):
 
         self.gt_file = gt_file
         self.cnd_file = cnd_file
@@ -129,21 +129,18 @@ class MapMetricManager_base:
         self.cell_dim = (np.ceil((self.max_bound - self.min_bound) / self.cell_size)).astype(int)
         self.max_bound = self.min_bound + self.cell_dim * self.cell_size
 
-        print("Dimension of each cell: ", self.cell_dim)
-
         self.metriccells = {}
 
         self.options = metric_options
 
         self.metric_fn = metric_fn
 
-    def reset(self, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_COMPLETENESS_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}):
+    def reset(self, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_coverage_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}):
         self.metriccells = {}
         self.cell_size = cell_size
         self.cell_dim = (np.ceil((self.max_bound - self.min_bound) / self.cell_size)).astype(int)
         self.max_bound = self.min_bound + self.cell_dim * self.cell_size
         self.options = metric_options
-        print("Dimension of each cell: ", self.cell_dim)        
 
     #visualize pointcloud
     def visualize(self,  show = True, show_grid = True):

@@ -84,7 +84,7 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
     print("Number of Iterations: ", len(ind_all_voxel))
     # print("Number of GT Voxels: ", len(ind_voxel_gt_key))
     # print("Number of Cand Voxels: ", len(ind_voxel_cand_key))
-    for i, voxel in tqdm(enumerate(ind_all_voxel), total=len(ind_all_voxel), desc="Calculating Quality Metric"):
+    for i, voxel in tqdm(enumerate(ind_all_voxel), total=len(ind_all_voxel), desc="Creating Jobs"):
         voxel_min_bound =None
         if tuple(voxel) not in ind_voxel_gt:
             gt_points = np.zeros((0,3))
@@ -102,8 +102,8 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
                 voxel_min_bound = voxel_min_bounds_cand[curr_index_candidate]    
 
         job.append(Process(target=parallel_compute, args=(d, voxel,gt_points, cand_points, options, cell_size, voxel_min_bound, metric_fn)))
-
-    num_cores = 8
+    print ("\n")
+    num_cores = (os.cpu_count()-1)
     print("Number of Jobs: ", len(job))
     print("Number of Cores: ", num_cores)
     print ("\n")
@@ -130,7 +130,7 @@ import open3d as o3d
 
 class MapMetricManager_v3(MapMetricManager_base):
 
-    def __init__(self, gt_file, cnd_file, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_COMPLETENESS_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}, compute_flag=1):
+    def __init__(self, gt_file, cnd_file, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_coverage_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}, compute_flag=1):
         super(MapMetricManager_v3, self).__init__(gt_file, cnd_file, cell_size, metric_options, compute_flag, calculate_quality_metric)
 
         self.voxels = None
@@ -156,7 +156,7 @@ class MapMetricManager_v3(MapMetricManager_base):
         for voxel in self.voxels:
             curr_index = self.voxels[tuple(voxel)]
 
-            current_quality = self.metriccells[str(voxel)].metrics[COMPELTENESS_STR]
+            current_quality = self.metriccells[str(voxel)].metrics[COVERAGE_STR]
             colors[self.voxel_to_index ==curr_index] = [1-current_quality,current_quality, 0]
 
         self.pointcloud_GT.colors = o3d.utility.Vector3dVector(colors)
@@ -178,7 +178,7 @@ class MapMetricManager_v3(MapMetricManager_base):
                 metric_list = [x for x in metric_list if x !=-1]
                 #metric_list = [x for x in metric_list if x != 0]
                 average_metric = np.mean(metric_list)
-            elif metric == COMPELTENESS_STR:
+            elif metric == COVERAGE_STR:
                 metric_list_ref = [metric_results[METRICS_STR][key][COMPELTENESS_REF_STR] for key in metric_results[METRICS_STR].keys()]
                 metric_list_ref = sum(metric_list_ref)
                 metric_list_cand =  [metric_results[METRICS_STR][key][COMPELTENESS_BOTH_INTERSECTION_STR] for key in metric_results[METRICS_STR].keys()]

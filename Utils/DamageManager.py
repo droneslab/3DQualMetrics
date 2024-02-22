@@ -84,7 +84,7 @@ class DamageManager:
 
     def deleteCorners(self, min_cell_index, max_cell_index, corner):
         """
-        Effect on completeness
+        Effect on coverage
         Removes a specified percentage of points from a corner of an open3d point cloud object.
         
         Parameters:
@@ -203,7 +203,7 @@ class DamageManager:
 
     def removeRandomPoints(self, min_cell_index, max_cell_index, percentage):
         """
-        Effect on completeness
+        Effect on coverage
         Removes a specified percentage of random points from an open3d point cloud object.
         
         Parameters:

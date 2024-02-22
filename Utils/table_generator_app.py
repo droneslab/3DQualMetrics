@@ -67,7 +67,7 @@ def main():
     print ("Generating csv file...")
 
     # Generate dataframe from dictionary
-    # Rows are chamfer, hausforff from REF and completeness, accuracy, artifacts, resolution from avergae from PQM
+    # Rows are chamfer, hausforff from REF and coverage, accuracy, artifacts, resolution from avergae from PQM
     # Columns are candidate, eps, size
     rows = []
     for candidate in Candidates:
@@ -84,13 +84,13 @@ def main():
                 except:
                     row.append(None)
                     row.append(None)    
-                row.append(data_dict[candidate][SM]["PQM"][eps, size]["Metrics"]["completeness"])
+                row.append(data_dict[candidate][SM]["PQM"][eps, size]["Metrics"]["coverage"])
                 row.append(data_dict[candidate][SM]["PQM"][eps, size]["Metrics"]["accuracy"])
                 row.append(data_dict[candidate][SM]["PQM"][eps, size]["Metrics"]["artifacts"])
                 row.append(data_dict[candidate][SM]["PQM"][eps, size]["Metrics"]["resolution"])
                 rows.append(row)
 
-    df = pd.DataFrame(rows, columns=["Candidate","SM", "eps", "size", "chamfer", "hausdorff", "completeness", "accuracy", "artifacts", "resolution"])
+    df = pd.DataFrame(rows, columns=["Candidate","SM", "eps", "size", "chamfer", "hausdorff", "coverage", "accuracy", "artifacts", "resolution"])
     print (df)
     # Save dataframe to csv file
     import time
