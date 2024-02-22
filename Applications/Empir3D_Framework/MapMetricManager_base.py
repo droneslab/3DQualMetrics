@@ -162,8 +162,6 @@ class MapMetricManager_base:
         return pcd_list
         # o3d.visualization.draw_geometries_with_animation_callback(pcd_list, rotate_view)
 
-
-
     def get_heatmap(self, metric_name):
         heatmap = copy.deepcopy(self.pointcloud_GT) #o3d.geometry.PointCloud()
         heatmap.paint_uniform_color([0, 0, 0])
@@ -177,6 +175,24 @@ class MapMetricManager_base:
             metric_val_list = (metric_val_list - np.min(metric_val_list)) / (np.max(metric_val_list) - np.min(metric_val_list))
         #print("max and min",metric_val_list )
         i=0
+        # print(np.mean(metric_val_list))
+        # print(np.max(metric_val_list))
+
+        red = np.array([1,0,0])
+        green = np.array([0,1,0])
+
+        qualities = np.linspace(0,1,20)
+
+        color_map = np.zeros((20,3))
+
+        color_dict = {
+        }
+
+        for k in range(20):
+            color_map[k] = red * (1-qualities[k]) + green * qualities[k]
+            color_dict[qualities[k]] = color_map[k]
+
+        
         for cell_index in self.metriccells:
             cell = self.metriccells[cell_index]
             cell_index_vals = get_list_from_string_tuple(cell_index)
@@ -191,7 +207,14 @@ class MapMetricManager_base:
 
             #color = cell.metrics[metric_name] * GREEN_COLOR + (1-cell.metrics[metric_name]) * RED_COLOR
             curr_val = float(metric_val_list[i])
-            color = curr_val * GREEN_COLOR.astype(np.float32) + (1-curr_val) * RED_COLOR.astype(np.float32)
+
+
+            closest_color = min(color_dict.keys(), key=lambda x:abs(x-curr_val))
+            color = color_dict[closest_color]
+
+            # print(curr_val,closest_color)
+
+            # color = curr_val * GREEN_COLOR.astype(np.float32) + (1-curr_val) * RED_COLOR.astype(np.float32)
             #colors[col_indx] = [1-cell.metrics[metric_name], cell.metrics[metric_name], 0]
             
             colors[col_indx] = color
@@ -203,6 +226,7 @@ class MapMetricManager_base:
             #heatmap.points.append(cell_center)
         heatmap.colors = o3d.utility.Vector3dVector(colors) # append([cell.metrics[metric_name], 0, 0])
         return heatmap
+
     
     #visualize pointcloud heatmap
     def visualize_heatmap(self, metric_name, show = True, show_grid = True):
