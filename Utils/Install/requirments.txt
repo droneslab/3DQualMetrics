@@ -1,0 +1,6 @@
+numpy
+scipy
+scikit-learn
+multiprocess
+open3d
+tqdm
