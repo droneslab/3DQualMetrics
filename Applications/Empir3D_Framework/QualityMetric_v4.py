@@ -3,7 +3,7 @@ import sys
 import os
 from tqdm import tqdm
 current = os.path.dirname(os.path.realpath(__file__))
-
+from sklearn.metrics.pairwise import cosine_similarity
 sys.path.append(current)
 
 
@@ -197,44 +197,9 @@ def calculate_Bvalid(pointsA, pointsB, e):
     valid_indices = distB < e
     return valid_indices, indB[valid_indices]
 
-def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):
-    """
-    Calculate the average PSNR between colors of points in pcdB and the nearest points in pcdA
-    for all points in pcdB that are within a distance 'e' from pcdA, using a simple loop.
-    
-    :param pointsA: NumPy array of points for pcdA.
-    :param colorsA: NumPy array of colors for pcdA, normalized [0, 255].
-    :param pointsB: NumPy array of points for pcdB.
-    :param colorsB: NumPy array of colors for pcdB, normalized [0, 255].
-    :param e: Distance threshold for considering valid points.
-    :return: Average PSNR value for all valid points.
-    """
-    # MAX_I = 255.0
-    # psnr_values = []
-    
-    # for i, pointB in enumerate(pointsB):
-    # for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
-    #     distances = np.sqrt(np.sum((pointsA - pointB)**2, axis=1))
-    #     within_e = distances < e
-    #     if np.any(within_e):
-    #         closest_point_idx = np.argmin(distances)
-    #         color_diff = colorsB[i] - colorsA[closest_point_idx]
-    #         mse = np.mean(np.square(color_diff))
-    #         if mse == 0:
-    #             psnr = float('inf')
-    #         else:
-    #             psnr = 20 * np.log10(MAX_I / np.sqrt(mse))
-    #         psnr_values.append(psnr)
-    
-    # if len(psnr_values) == 0:
-    
-    #     return float('inf')  # No valid points
-    
-    # average_psnr = np.mean(psnr_values)
-    # return average_psnr
 
-    # Initialize an empty list to store the RMSE values for each valid point
-    rmse_values = []
+def calculate_color_metric_cos(pointsA, colorsA, pointsB, colorsB, e):
+    cos_values = []
 
     # Loop over each point in pointsB
     for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
@@ -244,34 +209,72 @@ def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):
         within_e = distances < e
         # If there are any points within 'e' distance
         if np.any(within_e):
+            closest_point_idx = np.argmin(distances)
+            # Calculate cosine similarity between the colors of pointB and its closest point in pointsA
+            cos_sim = cosine_similarity([colorsB[i]], [colorsA[closest_point_idx]])
+            # print ("cos_sim", cos_sim)
+            cos_values.append(cos_sim[0][0])
+            
+    # Calculate the average cosine similarity across all valid points
+    average_cos = np.mean(cos_values)
+    return average_cos
+
+
+def calculate_color_metric_hsv(pointsA, colorsA, pointsB, colorsB, e):
+    from skimage import data
+    from skimage.color import rgb2hsv
+    cos_values = []
+
+
+    for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
+        # Calculate the Euclidean distance from pointB to all points in pointsA
+        distances = np.sqrt(np.sum((pointsA - pointB)**2, axis=1))
+        # Create a boolean mask where distances are less than the threshold 'e'
+        within_e = distances < e
+        # If there are any points within 'e' distance
+        if np.any(within_e):
             # Find the index of the closest point in pointsA to pointB
             closest_point_idx = np.argmin(distances)
-            # Calculate the difference in color between pointB and its closest point in pointsA
-            # color_diff = colorsB[i] - colorsA[closest_point_idx]
+
+            # Convert the colors to HSV
+            hsvA = rgb2hsv(colorsA[closest_point_idx])
+            hsvB = rgb2hsv(colorsB[i])  
+
+            # Cosine similarity between the colors of pointB and its closest point in pointsA
+            cos_sim = cosine_similarity([hsvB], [hsvA])
+
+            cos_values.append(cos_sim[0][0])
+            
+
+
+    # Calculate the average cosine similarity across all valid points
+    average_cos = np.mean(cos_values)
+    return average_cos
+
+def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):
+    mse_values = []
+
+    for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
+        # Calculate the Euclidean distance from pointB to all points in pointsA
+        distances = np.sqrt(np.sum((pointsA - pointB)**2, axis=1))
+        # Create a boolean mask where distances are less than the threshold 'e'
+        within_e = distances < e
+        # If there are any points within 'e' distance
+        if np.any(within_e):
+            # Find the index of the closest point in pointsA to pointB
+            closest_point_idx = np.argmin(distances)
+
             color_diff_r = colorsB[i][0] - colorsA[closest_point_idx][0]
             color_diff_g = colorsB[i][1] - colorsA[closest_point_idx][1]
             color_diff_b = colorsB[i][2] - colorsA[closest_point_idx][2]
-            # print ("color_diff", color_diff)
-            print ("color_diff_r", color_diff_r)
-            print ("color_diff_g", color_diff_g)
-            print ("color_diff_b", color_diff_b)
-            # Calculate the mean squared error of the color difference
-            # mse = np.mean(np.square(color_diff))
-            # print ("mse", mse)
+
             mse_r = np.square(color_diff_r)
             mse_g = np.square(color_diff_g)
             mse_b = np.square(color_diff_b)
             mse = (mse_r + mse_g + mse_b)/3
-            print ("mse", mse)
-            # Calculate the root mean squared error (RMSE)
-            rmse = np.sqrt(mse)
-            print ("rmse", rmse)
-            # Append the RMSE value to the list
-            rmse_values.append(rmse)
 
-    # Calculate the average RMSE across all valid points
-    average_rmse = np.mean(rmse_values)
-    # Return the average RMSE
+    average_rmse = np.sqrt(np.mean(mse_values))
+
     return average_rmse
 
 # def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):

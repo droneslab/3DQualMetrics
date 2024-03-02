@@ -1,0 +1,18 @@
+{
+    "gt_file": "/home/yashturkar/Workspace/3DQualMetrics/Samples/davis_change_test_cand_1.ply",
+    "cnd_file": [
+        "/home/yashturkar/Workspace/3DQualMetrics/Samples/davis_change_test_gt.ply"
+        
+    ],
+    "save_path": "./results/davis_change_flip/",
+    "cell_size": [
+        5,10,20
+    ],
+    "weights": [ 
+        [0.25,0.25, 0.25,0.25]
+    ],
+    "eps": [
+        0.1,0.5,1,2,5
+    ]
+
+}
