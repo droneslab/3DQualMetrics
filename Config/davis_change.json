@@ -6,13 +6,13 @@
     ],
     "save_path": "./results/davis_change_flip/",
     "cell_size": [
-        5,10,20
+        50
     ],
     "weights": [ 
         [0.25,0.25, 0.25,0.25]
     ],
     "eps": [
-        0.1,0.5,1,2,5
+        0.1
     ]
 
 }

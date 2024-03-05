@@ -2,3 +2,4 @@
 ./Applications/Empir3D_Framework/__pycache__/*
 Samples/*.ply
 results/*
+./Applications/Empir3D_Framework/__pycache__/*.pyc

@@ -1,7 +1,7 @@
 import sys,os
 sys.path.append(os.getcwd())
 
-from QualityMetric_v3 import  calculate_quality_metric
+from QualityMetric_v4 import  calculate_4d_metric as calculate_quality_metric
 import numpy as np
 import open3d as o3d
 from tqdm import tqdm
@@ -49,27 +49,29 @@ def capture_image(vis):
 import time
 
 class MapCell:
-    def __init__(self, cell_index, pointcloud_gt, pointcloud_cnd, options, compute_flag,fill_metrics = True, metric_fn = calculate_quality_metric,  cell_size=None, min_bound=None):
+    def __init__(self, cell_index, pcd_gt,pcd_cand,pointcloud_gt, pointcloud_cnd, options, compute_flag,fill_metrics = True, metric_fn = calculate_quality_metric,  cell_size=None, min_bound=None):
         self.cell_index = cell_index
         self.metrics = {}
         self.options = options
         self.compute_flag = compute_flag
         self.metric_fn = metric_fn
+        print ("Test")
+        print (type(pointcloud_gt)) 
         if fill_metrics:
-            self.metrics[COVERAGE_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR], self.metrics[COMPELTENESS_REF_STR], self.metrics[COMPELTENESS_BOTH_INTERSECTION_STR], self.metrics[COMPELTENESS_CAND_ONLY_STR] = self.compute_metric_v3(pointcloud_gt, pointcloud_cnd, options[EPSILON_STR],  cell_size=cell_size, min_bound=min_bound)  
+            self.metrics[COVERAGE_STR], self.metrics[ARTIFACTS_STR], self.metrics[RESOLUTION_STR], self.metrics[ACCURACY_STR],self.metrics[COLOR_STR], self.metrics[COMPELTENESS_REF_STR], self.metrics[COMPELTENESS_BOTH_INTERSECTION_STR], self.metrics[COMPELTENESS_CAND_ONLY_STR] = self.compute_metric_v3(pcd_gt,pcd_cand,pointcloud_gt, pointcloud_cnd, options[EPSILON_STR],  cell_size=cell_size, min_bound=min_bound)  
             self.metrics[QUALITY_STR]  = self.metrics[COVERAGE_STR] * options[WEIGHT_coverage_STR] + self.metrics[ARTIFACTS_STR] * options[WEIGHT_ARTIFACTS_STR] + self.metrics[RESOLUTION_STR] * options[WEIGHT_RESOLUTION_STR] + self.metrics[ACCURACY_STR] * options[WEIGHT_ACCURACY_STR]     
 
             # self.metrics[CHAMFER_STR] = -1 # calculate_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
             # self.metrics[NORMALIZED_CHAMFER_STR] = -1 #calculate_normalized_chamfer_distance_metric(pointcloud_gt, pointcloud_cnd)
             # self.metrics[HOUSDORFF_STR] = -1 #calculate_hausdorff_distance_metric(pointcloud_gt, pointcloud_cnd)
 
-    def compute_metric_v3(self, pointcloud_gt, pointcloud_cnd, eps,  cell_size, min_bound):
+    def compute_metric_v3(self, pcd_gt,pcd_cand,pointcloud_gt, pointcloud_cnd, eps,  cell_size, min_bound):
         # cell_size = bbox_gt.get_extent()[0]
         # min_bound = bbox_gt.min_bound
-        return self.metric_fn(pointcloud_gt, pointcloud_cnd, eps, cell_size, min_bound)
-    def compute_metric(self, pointcloud_gt, pointcloud_cnd, eps):
+        return self.metric_fn(pcd_gt,pcd_cand,pointcloud_gt, pointcloud_cnd, eps, cell_size, min_bound)
+    # def compute_metric(self, pointcloud_gt, pointcloud_cnd, eps):
 
-        return self.metric_fn(pointcloud_gt, pointcloud_cnd, eps)
+    #     return self.metric_fn(pointcloud_gt, pointcloud_cnd, eps)
                                                                          
 
 def parse_mapmetric_cells(cell_index, options, cell_metrics):
@@ -113,8 +115,8 @@ class MapMetricManager_base:
         self.pointcloud_GT = o3d.io.read_point_cloud(gt_file)
         self.pointcloud_Cnd = o3d.io.read_point_cloud(cnd_file)
 
-        self.pointcloud_GT.paint_uniform_color(GT_COLOR)
-        self.pointcloud_Cnd.paint_uniform_color(CND_COLOR)
+        # self.pointcloud_GT.paint_uniform_color(GT_COLOR)
+        # self.pointcloud_Cnd.paint_uniform_color(CND_COLOR)
 
         self.cell_size = cell_size
         #compute the min bound of the pointcloud
@@ -310,27 +312,28 @@ class MapMetricManager_base:
 
         o3d.visualization.draw_geometries(pcd_list)
 
-    def compute_metric_prev(self, filename="test.json"):
-        st_time = time.time()
-        #iterate through all the Cells
-        print ("Using this version of compute_metric")
-        numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
-        print("Number of Iterations: ", numIter)
-        for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Computing Metrics"):
-        # for min_cell_index, max_cell_index in self.iterate_cells():
+    # def compute_metric_prev(self, filename="test.json"):
+    #     st_time = time.time()
+    #     #iterate through all the Cells
+    #     print ("Using this version of compute_metric")
+    #     numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
+    #     print("Number of Iterations: ", numIter)
+    #     for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Computing Metrics"):
+    #     # for min_cell_index, max_cell_index in self.iterate_cells():
             
-            cropped_gt,gt_box = get_cropped_point_cloud(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            cropped_candidate,cand_box = get_cropped_point_cloud(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            if cropped_gt.is_empty() and cropped_candidate.is_empty():
-                #print("EMPTY CELL: ", min_cell_index, max_cell_index, end="\t" )
-                pass
-            else:
+    #         cropped_gt,gt_box = get_cropped_point_cloud(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
+    #         cropped_candidate,cand_box = get_cropped_point_cloud(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
+    #         if cropped_gt.is_empty() and cropped_candidate.is_empty():
+    #             #print("EMPTY CELL: ", min_cell_index, max_cell_index, end="\t" )
+    #             pass
+    #         else:
+    #             print ("Test2")
+    #             print (type(cropped_gt))
+    #             self.metriccells[str(min_cell_index)] =  MapCell(min_cell_index,cropped_gt, cropped_candidate, self.options,self.compute_flag, metric_fn=self.metric_fn)                
+    #             # print(self.metriccells[str(min_cell_index)].metrics)
 
-                self.metriccells[str(min_cell_index)] =  MapCell(min_cell_index,cropped_gt, cropped_candidate, self.options,self.compute_flag, metric_fn=self.metric_fn)                
-                # print(self.metriccells[str(min_cell_index)].metrics)
-
-        print ("Time Taken: ", time.time() - st_time)                                                         
-        self.save_metric(filename)
+    #     print ("Time Taken: ", time.time() - st_time)                                                         
+    #     self.save_metric(filename)
 
 
                                           
@@ -386,49 +389,51 @@ class MapMetricManager_base:
                 json.dump(metric_results, fp, indent=4)
 
 
-    def compute_metric(self, filename ="results/test.json"):
+    # def compute_metric(self, filename ="results/test.json"):
 
-        st_time = time.time()
-        from multiprocess import Process, Manager
-        def f(d, min_cell_index,cropped_gt, cropped_candidate, bbox_gt, bbox_cnd):
-            d[str(min_cell_index)] = MapCell(min_cell_index,cropped_gt, cropped_candidate, self.options,self.compute_flag, metric_fn=self.metric_fn, bbox_gt=bbox_gt, bbox_cnd=bbox_cnd)
-            #print(d[str(min_cell_index)].metrics)
+    #     st_time = time.time()
+    #     from multiprocess import Process, Manager
+    #     def f(d, min_cell_index,cropped_gt, cropped_candidate, bbox_gt, bbox_cnd):
+    #         print ("Test3")
+    #         print (type(cropped_gt))
+    #         d[str(min_cell_index)] = MapCell(min_cell_index,cropped_gt, cropped_candidate, self.options,self.compute_flag, metric_fn=self.metric_fn, bbox_gt=bbox_gt, bbox_cnd=bbox_cnd)
+    #         #print(d[str(min_cell_index)].metrics)
 
-        manager = Manager()
-        d = manager.dict()
+    #     manager = Manager()
+    #     d = manager.dict()
 
-        job = []
-        numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
-        print("Number of Iterations: ", numIter)
-        for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Generating Jobs"):
-            cropped_gt, bbox_gt = get_cropped_point_cloud(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            cropped_candidate, bbox_cnd = get_cropped_point_cloud(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
-            gt_is_empty = cropped_gt.is_empty()
-            cand_is_empty = cropped_candidate.is_empty()
-            if gt_is_empty and cand_is_empty:
-                pass
-            else:
+    #     job = []
+    #     numIter = self.cell_dim[0] * self.cell_dim[1] * self.cell_dim[2]
+    #     print("Number of Iterations: ", numIter)
+    #     for i,(min_cell_index, max_cell_index) in tqdm(enumerate(self.iterate_cells()), total=numIter, desc="Generating Jobs"):
+    #         cropped_gt, bbox_gt = get_cropped_point_cloud(self.pointcloud_GT, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
+    #         cropped_candidate, bbox_cnd = get_cropped_point_cloud(self.pointcloud_Cnd, self.min_bound, self.cell_size, min_cell_index, max_cell_index)
+    #         gt_is_empty = cropped_gt.is_empty()
+    #         cand_is_empty = cropped_candidate.is_empty()
+    #         if gt_is_empty and cand_is_empty:
+    #             pass
+    #         else:
 
-                cropped_gt = np.asarray(cropped_gt.points)
-                cropped_candidate = np.asarray(cropped_candidate.points)
-                job.append(Process(target=f, args=(d, min_cell_index,cropped_gt, cropped_candidate, bbox_gt, bbox_cnd)))
-                #job[-1].start()
+    #             cropped_gt = np.asarray(cropped_gt.points)
+    #             cropped_candidate = np.asarray(cropped_candidate.points)
+    #             job.append(Process(target=f, args=(d, min_cell_index,cropped_gt, cropped_candidate, bbox_gt, bbox_cnd)))
+    #             #job[-1].start()
                 
-        # Set number of cores to use here
-        num_cores = 8
-        for i, _ in tqdm(enumerate(range(0, len(job), num_cores)), total=int(len(job)/num_cores), desc="Running Jobs"):
-            _ = [p.start() for p in job[i:i+num_cores]]
-            _ = [p.join() for p in job[i:i+num_cores]]
-            # Free up memory
-            job[i:i+num_cores] = []
-        print ("Starting Jobs ...")
-        #_ = [p.start() for p in job]
-        #_ = [p.join() for p in job]
+    #     # Set number of cores to use here
+    #     num_cores = 8
+    #     for i, _ in tqdm(enumerate(range(0, len(job), num_cores)), total=int(len(job)/num_cores), desc="Running Jobs"):
+    #         _ = [p.start() for p in job[i:i+num_cores]]
+    #         _ = [p.join() for p in job[i:i+num_cores]]
+    #         # Free up memory
+    #         job[i:i+num_cores] = []
+    #     print ("Starting Jobs ...")
+    #     #_ = [p.start() for p in job]
+    #     #_ = [p.join() for p in job]
 
-        self.metriccells= copy.deepcopy(d)
+    #     self.metriccells= copy.deepcopy(d)
 
-        print ("Time Taken: ", time.time() - st_time)
-        self.save_metric(filename)
+    #     print ("Time Taken: ", time.time() - st_time)
+    #     self.save_metric(filename)
             
 
 def get_cropped_point_cloud_np(pcd, min_bound_source, chunk_size, min_cell_index, max_cell_index):

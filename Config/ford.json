@@ -1,0 +1,18 @@
+{
+    "gt_file": "/home/yashturkar/Workspace/3DQualMetrics/Samples/ford-color-test.ply",
+    "cnd_file": [
+        "/home/yashturkar/Workspace/3DQualMetrics/Samples/ford-color-test-sample_210.ply"
+        
+    ],
+    "save_path": "./results/",
+    "cell_size": [
+        0.1
+    ],
+    "weights": [ 
+        [0.25,0.25, 0.25,0.25]
+    ],
+    "eps": [
+        0.1
+    ]
+
+}

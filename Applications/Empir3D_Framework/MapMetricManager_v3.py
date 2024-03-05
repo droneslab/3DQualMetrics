@@ -6,7 +6,7 @@ from Applications.Empir3D_Framework.system_constants import *
 from Applications.Empir3D_Framework.MapMetricManager_base import MapMetricManager_base, MapCell
 
 
-from QualityMetric_v3 import  calculate_quality_metric
+from QualityMetric_v4 import  calculate_quality_metric, calculate_4d_metric
 
 
 
@@ -67,7 +67,7 @@ def compute_parallel_metric(pcd_gt, pcd_cand, options,cell_size, min_bound, metr
     def parallel_compute(d, min_cell_index,gt_points, cand_points, options, cell_size, min_bound, metric_fn):
 
         #d[tuple(min_cell_index)] = calculate_quality_metric(gt_points, cand_points, e, cell_size, min_bound)
-        d[str(min_cell_index)] = MapCell(min_cell_index,gt_points, cand_points, options, False, metric_fn=metric_fn, cell_size=cell_size, min_bound=min_bound)
+        d[str(min_cell_index)] = MapCell(min_cell_index,pcd_gt,pcd_cand,gt_points, cand_points, options, False, metric_fn=metric_fn, cell_size=cell_size, min_bound=min_bound)
 
 
     manager = Manager()
@@ -131,7 +131,7 @@ import open3d as o3d
 class MapMetricManager_v3(MapMetricManager_base):
 
     def __init__(self, gt_file, cnd_file, cell_size, metric_options = {EPSILON_STR: 0.1, WEIGHT_coverage_STR: 0.1, WEIGHT_ARTIFACTS_STR: 0.1, WEIGHT_RESOLUTION_STR: 0.4, WEIGHT_ACCURACY_STR: 0.4}, compute_flag=1):
-        super(MapMetricManager_v3, self).__init__(gt_file, cnd_file, cell_size, metric_options, compute_flag, calculate_quality_metric)
+        super(MapMetricManager_v3, self).__init__(gt_file, cnd_file, cell_size, metric_options, compute_flag, calculate_4d_metric)
 
         self.voxels = None
         self.voxel_to_index = None
@@ -171,6 +171,10 @@ class MapMetricManager_v3(MapMetricManager_base):
             metric_list = [metric_results[METRICS_STR][key][metric] for key in metric_results[METRICS_STR].keys()]
             if metric == RESOLUTION_STR:
                 # Remove all 0 from metric_list
+                metric_list = [x for x in metric_list if x !=-1]
+                average_metric = np.mean(metric_list)
+            elif metric == COLOR_STR:
+                # Remove all -1 from metric_list
                 metric_list = [x for x in metric_list if x !=-1]
                 average_metric = np.mean(metric_list)
             elif metric == ACCURACY_STR:

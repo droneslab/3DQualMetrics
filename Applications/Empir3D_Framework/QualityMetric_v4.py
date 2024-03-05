@@ -202,7 +202,9 @@ def calculate_color_metric_cos(pointsA, colorsA, pointsB, colorsB, e):
     cos_values = []
 
     # Loop over each point in pointsB
-    for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
+    for i, pointB in enumerate(pointsB):
+    # for i, pointB in enumerate(tqdm(pointsB, desc="Computing color metric")):
+
         # Calculate the Euclidean distance from pointB to all points in pointsA
         distances = np.sqrt(np.sum((pointsA - pointB)**2, axis=1))
         # Create a boolean mask where distances are less than the threshold 'e'
@@ -277,34 +279,13 @@ def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):
 
     return average_rmse
 
-# def calculate_color_metric(pointsA, colorsA, pointsB, colorsB, e):
-#     """
-#     Calculate the color metric (average PSNR) for valid points in pcdB relative to pcdA.
-    
-#     :param pointsA: NumPy array of points for pcdA.
-#     :param colorsA: NumPy array of colors for pcdA.
-#     :param pointsB: NumPy array of points for pcdB.
-#     :param colorsB: NumPy array of colors for pcdB.
-#     :param e: Distance threshold for valid points.
-#     :return: PSNR value for valid points.
-#     """
-#     valid_indices, valid_indices_A = calculate_Bvalid(pointsA, pointsB, e)
-#     valid_colors_B = colorsB[valid_indices]
-#     valid_colors_A = colorsA[valid_indices_A]
-    
-#     # Calculate the color difference (Euclidean distance) for valid points
-#     color_diff = np.linalg.norm(valid_colors_B - valid_colors_A, axis=1)
-    
-#     # Assuming the maximum color value is 255
-#     MAX_I = 255.0
-#     MSE = np.mean(np.square(color_diff))
-    
-#     if MSE == 0:
-#         # Perfect match case
-#         return float('inf')
-#     PSNR = 20 * np.log10(MAX_I / np.sqrt(MSE))
-    
-#     return PSNR
+def calculate_4d_metric(pcd_gt,pcd_cand,pcdA_np, pcdB_np, e, cell_size, min_bound):
+
+    normCov, normArt, normRes, normAcc, count_ref, count_both, count_cand_only = calculate_quality_metric(pcdA_np, pcdB_np, e, cell_size, min_bound)
+    colorsA = np.asarray(pcd_gt.colors)
+    colorsB = np.asarray(pcd_cand.colors)
+    color_metric = calculate_color_metric_cos(pcdA_np, colorsA, pcdB_np, colorsB, e)
+    return normCov, normArt, normRes, normAcc, color_metric, count_ref, count_both, count_cand_only
 
 def calculate_quality_metric(pcdA_np, pcdB_np, e, cell_size, min_bound):
     # pcdA -> ref
