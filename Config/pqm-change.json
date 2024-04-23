@@ -1,0 +1,18 @@
+{
+    "gt_file": "/home/yashturkar/Downloads/change/pointcloud_3.ply",
+    "cnd_file": [
+        "/home/yashturkar/Downloads/base/pointcloud_3.ply"
+        
+    ],
+    "save_path": "./results/pqm-change/",
+    "cell_size": [
+        1
+    ],
+    "weights": [ 
+        [0.25,0.25, 0.25,0.25]
+    ],
+    "eps": [
+        1
+    ]
+
+}

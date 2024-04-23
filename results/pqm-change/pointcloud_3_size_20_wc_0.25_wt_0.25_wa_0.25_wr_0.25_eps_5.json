@@ -1,0 +1,83 @@
+{
+    "metrics": {
+        "(1, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9932084124285309,
+            "coverage_ref": 3,
+            "coverage_cand": 3,
+            "coverage_cand_only": 0,
+            "quality": 0.9983021031071327
+        },
+        "(0, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9894863338819148,
+            "accuracy": 0.9945769183674251,
+            "coverage_ref": 9,
+            "coverage_cand": 9,
+            "coverage_cand_only": 0,
+            "quality": 0.996015813062335
+        },
+        "(1, 0, 0)": {
+            "coverage": 0.9333333333333333,
+            "artifacts": 0.875,
+            "resolution": 0.964916359039219,
+            "accuracy": 0.984884063172981,
+            "coverage_ref": 15,
+            "coverage_cand": 14,
+            "coverage_cand_only": 2,
+            "quality": 0.9395334388863834
+        },
+        "(0, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9808136070358484,
+            "accuracy": 0.9967208311224082,
+            "coverage_ref": 22,
+            "coverage_cand": 22,
+            "coverage_cand_only": 0,
+            "quality": 0.9943836095395642
+        }
+    },
+    "cell_size": 20,
+    "cell_dim": [
+        2,
+        2,
+        1
+    ],
+    "min_bound": [
+        -14.705062866210938,
+        -12.553461074829102,
+        -2.6695773601531982
+    ],
+    "max_bound": [
+        25.294937133789062,
+        27.4465389251709,
+        17.3304226398468
+    ],
+    "options": {
+        "wc": 0.25,
+        "wt": 0.25,
+        "wa": 0.25,
+        "wr": 0.25,
+        "e": 5
+    },
+    "gt_file": "/home/yashturkar/Downloads/change/pointcloud_3.ply",
+    "cnd_file": "/home/yashturkar/Downloads/base/pointcloud_3.ply",
+    "average": {
+        "coverage": 0.9795918367346939,
+        "artifacts": 0.96,
+        "resolution": 0.9838040749892456,
+        "accuracy": 0.9923475562728363,
+        "quality": 0.9923475562728363
+    },
+    "variance": {
+        "coverage": 0.000833333333333333,
+        "artifacts": 0.0029296875,
+        "resolution": 0.00016507119136662047,
+        "accuracy": 2.0135097707767864e-05,
+        "quality": 0.0006047375943671376
+    }
+}

@@ -1,0 +1,143 @@
+{
+    "metrics": {
+        "(0, 2, 0)": {
+            "coverage": 0.9230769230769231,
+            "artifacts": 0.9230769230769231,
+            "resolution": 1.0,
+            "accuracy": 0.9712970424454485,
+            "coverage_ref": 13,
+            "coverage_cand": 12,
+            "coverage_cand_only": 1,
+            "quality": 0.9543627221498237
+        },
+        "(2, 1, 0)": {
+            "coverage": 0.9382716049382716,
+            "artifacts": 0.9047619047619048,
+            "resolution": 0.9909563353440758,
+            "accuracy": 0.9780318224080707,
+            "coverage_ref": 81,
+            "coverage_cand": 76,
+            "coverage_cand_only": 8,
+            "quality": 0.9530054168630807
+        },
+        "(0, 0, 0)": {
+            "coverage": 0.92,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9905422458915452,
+            "coverage_ref": 25,
+            "coverage_cand": 23,
+            "coverage_cand_only": 0,
+            "quality": 0.9776355614728862
+        },
+        "(0, 1, 0)": {
+            "coverage": 0.9464285714285714,
+            "artifacts": 0.954954954954955,
+            "resolution": 0.9970407347781722,
+            "accuracy": 0.9867267909917286,
+            "coverage_ref": 112,
+            "coverage_cand": 106,
+            "coverage_cand_only": 5,
+            "quality": 0.9712877630383568
+        },
+        "(1, 0, 0)": {
+            "coverage": 0.9583333333333334,
+            "artifacts": 0.9387755102040817,
+            "resolution": 0.9915746809830267,
+            "accuracy": 0.9431947567266623,
+            "coverage_ref": 96,
+            "coverage_cand": 92,
+            "coverage_cand_only": 6,
+            "quality": 0.957969570311776
+        },
+        "(2, 2, 0)": {
+            "coverage": 0.9090909090909091,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9660420621426543,
+            "coverage_ref": 11,
+            "coverage_cand": 10,
+            "coverage_cand_only": 0,
+            "quality": 0.9687832428083909
+        },
+        "(3, 0, 0)": {
+            "coverage": 0.0,
+            "artifacts": 0.0,
+            "resolution": 0.0,
+            "accuracy": 1.0,
+            "coverage_ref": 1,
+            "coverage_cand": 0,
+            "coverage_cand_only": 1,
+            "quality": 0.25
+        },
+        "(1, 2, 0)": {
+            "coverage": 0.918918918918919,
+            "artifacts": 0.9714285714285714,
+            "resolution": 0.9837529214308566,
+            "accuracy": 0.9756290172916792,
+            "coverage_ref": 37,
+            "coverage_cand": 34,
+            "coverage_cand_only": 1,
+            "quality": 0.9624323572675065
+        },
+        "(1, 1, 0)": {
+            "coverage": 0.9751552795031055,
+            "artifacts": 0.9751552795031055,
+            "resolution": 0.9969793211934779,
+            "accuracy": 0.9919557934671736,
+            "coverage_ref": 161,
+            "coverage_cand": 157,
+            "coverage_cand_only": 4,
+            "quality": 0.9848114184167156
+        },
+        "(2, 0, 0)": {
+            "coverage": 0.8947368421052632,
+            "artifacts": 0.7640449438202247,
+            "resolution": 0.9620279052380527,
+            "accuracy": 0.9149935038120552,
+            "coverage_ref": 76,
+            "coverage_cand": 68,
+            "coverage_cand_only": 21,
+            "quality": 0.8839507987438989
+        }
+    },
+    "cell_size": 10,
+    "cell_dim": [
+        4,
+        3,
+        1
+    ],
+    "min_bound": [
+        -14.705062866210938,
+        -12.553461074829102,
+        -2.6695773601531982
+    ],
+    "max_bound": [
+        25.294937133789062,
+        17.4465389251709,
+        7.330422639846802
+    ],
+    "options": {
+        "wc": 0.25,
+        "wt": 0.25,
+        "wa": 0.25,
+        "wr": 0.25,
+        "e": 1
+    },
+    "gt_file": "/home/yashturkar/Downloads/change/pointcloud_3.ply",
+    "cnd_file": "/home/yashturkar/Downloads/base/pointcloud_3.ply",
+    "average": {
+        "coverage": 0.9429037520391517,
+        "artifacts": 0.9248,
+        "resolution": 0.8922331898967663,
+        "accuracy": 0.9718413035177018,
+        "quality": 0.9718413035177018
+    },
+    "variance": {
+        "coverage": 0.07861281626310679,
+        "artifacts": 0.08320730403802078,
+        "resolution": 0.08857396495664295,
+        "accuracy": 0.000590770157134976,
+        "quality": 0.04569709547469395
+    }
+}

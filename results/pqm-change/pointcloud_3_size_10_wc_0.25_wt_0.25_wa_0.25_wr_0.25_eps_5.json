@@ -1,0 +1,143 @@
+{
+    "metrics": {
+        "(0, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9942594084890897,
+            "coverage_ref": 3,
+            "coverage_cand": 3,
+            "coverage_cand_only": 0,
+            "quality": 0.9985648521222724
+        },
+        "(2, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 0.875,
+            "resolution": 0.9909563353440758,
+            "accuracy": 0.9953357867174839,
+            "coverage_ref": 7,
+            "coverage_cand": 7,
+            "coverage_cand_only": 1,
+            "quality": 0.9653230305153899
+        },
+        "(0, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.998108449178309,
+            "coverage_ref": 4,
+            "coverage_cand": 4,
+            "coverage_cand_only": 0,
+            "quality": 0.9995271122945772
+        },
+        "(0, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9970407347781722,
+            "accuracy": 0.9973160263388688,
+            "coverage_ref": 5,
+            "coverage_cand": 5,
+            "coverage_cand_only": 0,
+            "quality": 0.9985891902792603
+        },
+        "(1, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9915746809830267,
+            "accuracy": 0.9819123558934922,
+            "coverage_ref": 7,
+            "coverage_cand": 7,
+            "coverage_cand_only": 0,
+            "quality": 0.9933717592191298
+        },
+        "(2, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9932084124285309,
+            "coverage_ref": 3,
+            "coverage_cand": 3,
+            "coverage_cand_only": 0,
+            "quality": 0.9983021031071327
+        },
+        "(3, 0, 0)": {
+            "coverage": 0.0,
+            "artifacts": 0.0,
+            "resolution": 0.0,
+            "accuracy": 0.001644787057493935,
+            "coverage_ref": 1,
+            "coverage_cand": 0,
+            "coverage_cand_only": 1,
+            "quality": 0.00041119676437348374
+        },
+        "(1, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9837529214308566,
+            "accuracy": 0.9946483885028742,
+            "coverage_ref": 6,
+            "coverage_cand": 6,
+            "coverage_cand_only": 0,
+            "quality": 0.9946003274834326
+        },
+        "(1, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9969793211934779,
+            "accuracy": 0.9983911586934348,
+            "coverage_ref": 6,
+            "coverage_cand": 6,
+            "coverage_cand_only": 0,
+            "quality": 0.9988426199717281
+        },
+        "(2, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9620279052380527,
+            "accuracy": 0.9788820525041436,
+            "coverage_ref": 7,
+            "coverage_cand": 7,
+            "coverage_cand_only": 0,
+            "quality": 0.985227489435549
+        }
+    },
+    "cell_size": 10,
+    "cell_dim": [
+        4,
+        3,
+        1
+    ],
+    "min_bound": [
+        -14.705062866210938,
+        -12.553461074829102,
+        -2.6695773601531982
+    ],
+    "max_bound": [
+        25.294937133789062,
+        17.4465389251709,
+        7.330422639846802
+    ],
+    "options": {
+        "wc": 0.25,
+        "wt": 0.25,
+        "wa": 0.25,
+        "wr": 0.25,
+        "e": 5
+    },
+    "gt_file": "/home/yashturkar/Downloads/change/pointcloud_3.ply",
+    "cnd_file": "/home/yashturkar/Downloads/base/pointcloud_3.ply",
+    "average": {
+        "coverage": 0.9795918367346939,
+        "artifacts": 0.96,
+        "resolution": 0.8922331898967663,
+        "accuracy": 0.8933706825803721,
+        "quality": 0.8933706825803721
+    },
+    "variance": {
+        "coverage": 0.09000000000000001,
+        "artifacts": 0.08890625000000002,
+        "resolution": 0.08857396495664295,
+        "accuracy": 0.08839309931847518,
+        "quality": 0.0886779891104091
+    }
+}

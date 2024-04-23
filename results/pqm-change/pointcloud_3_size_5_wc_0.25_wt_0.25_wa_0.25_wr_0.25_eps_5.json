@@ -1,0 +1,553 @@
+{
+    "metrics": {
+        "(0, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9300713591086234,
+            "accuracy": 0.997880012363809,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9819878428681081
+        },
+        "(3, 5, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9611740765027785,
+            "accuracy": 0.9952364863342228,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9891026407092504
+        },
+        "(2, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9968412226412954,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9992103056603239
+        },
+        "(6, 0, 0)": {
+            "coverage": 1,
+            "artifacts": 0,
+            "resolution": -1,
+            "accuracy": -1,
+            "coverage_ref": 0,
+            "coverage_cand": 0,
+            "coverage_cand_only": 1,
+            "quality": -0.25
+        },
+        "(4, 0, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9919920031559422,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9979980007889855
+        },
+        "(0, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9940282409225916,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9985070602306478
+        },
+        "(1, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.997650422802408,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.999412605700602
+        },
+        "(2, 0, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9956008882529891,
+            "accuracy": 0.9980176547854716,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9984046357596151
+        },
+        "(4, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9966181247473541,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9991545311868385
+        },
+        "(1, 3, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9963543863107017,
+            "accuracy": 0.9968149743841719,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9982923401737185
+        },
+        "(3, 1, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9964264023555369,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9991066005888842
+        },
+        "(4, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9064962898279877,
+            "accuracy": 0.9867496616600593,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9733114878720117
+        },
+        "(5, 4, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9934344070649485,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9983586017662371
+        },
+        "(4, 1, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9726597424797253,
+            "accuracy": 0.9969999746343086,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9924149292785085
+        },
+        "(3, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9753856269446985,
+            "accuracy": 0.9976396740844693,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9932563252572919
+        },
+        "(0, 1, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9687577588008933,
+            "accuracy": 0.9975024544824289,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9915650533208306
+        },
+        "(2, 4, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9941098229730877,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.998527455743272
+        },
+        "(4, 3, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9905544128907917,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9976386032226979
+        },
+        "(1, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9959794184855424,
+            "accuracy": 0.9977430336347156,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9984306130300645
+        },
+        "(3, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9503198900643239,
+            "accuracy": 0.9669784294451385,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9793245798773655
+        },
+        "(5, 2, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9931825291313363,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.998295632282834
+        },
+        "(4, 2, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9336946503222293,
+            "accuracy": 0.994597147928566,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9820729495626989
+        },
+        "(1, 1, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9982393349395757,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9995598337348939
+        },
+        "(4, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9827178570701196,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.99567946426753
+        },
+        "(2, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9946353357631557,
+            "accuracy": 0.9969793960336789,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9979036829492086
+        },
+        "(5, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9303460910085727,
+            "accuracy": 0.9931569631276461,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9808757635340547
+        },
+        "(4, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9872270189538792,
+            "accuracy": 0.976487129095995,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9909285370124685
+        },
+        "(5, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9050378390149688,
+            "accuracy": 0.9568638993503951,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.965475434591341
+        },
+        "(1, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9944461158127261,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9986115289531815
+        },
+        "(2, 3, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.988202493982104,
+            "accuracy": 0.9972051808144975,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9963519186991503
+        },
+        "(3, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.5356190032847883,
+            "accuracy": 0.9956395789719307,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.8828146455641797
+        },
+        "(3, 4, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9764618227212659,
+            "accuracy": 0.9941972408006333,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9926647658804748
+        },
+        "(2, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9473212489756264,
+            "accuracy": 0.9948710961132894,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.985548086272229
+        },
+        "(0, 4, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9953283675151846,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9988320918787962
+        },
+        "(5, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9160161197080945,
+            "accuracy": 0.9942702944009064,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9775716035272503
+        },
+        "(6, 0, 1)": {
+            "coverage": 0,
+            "artifacts": 1,
+            "resolution": -1,
+            "accuracy": -1,
+            "coverage_ref": 1,
+            "coverage_cand": 0,
+            "coverage_cand_only": 0,
+            "quality": -0.25
+        },
+        "(3, 5, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9950101068992028,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9987525267248007
+        },
+        "(0, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9904464904274414,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9976116226068603
+        },
+        "(2, 1, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9991712273230732,
+            "accuracy": 0.9985701423119736,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9994353424087618
+        },
+        "(1, 3, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9936733327441652,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9984183331860413
+        },
+        "(5, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9968976335172,
+            "accuracy": 0.9904763951888118,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9968435071765029
+        },
+        "(3, 0, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9970402598509673,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9992600649627419
+        },
+        "(4, 1, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.9663814781529356,
+            "accuracy": 0.9708765254835285,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9843145009091161
+        },
+        "(5, 2, 0)": {
+            "coverage": 1,
+            "artifacts": 0,
+            "resolution": -1,
+            "accuracy": -1,
+            "coverage_ref": 0,
+            "coverage_cand": 0,
+            "coverage_cand_only": 1,
+            "quality": -0.25
+        },
+        "(5, 0, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.7497239883595063,
+            "accuracy": 0.9812899700362515,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9327534895989394
+        },
+        "(5, 3, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9945607295977232,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9986401823994309
+        },
+        "(3, 4, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.98473342176167,
+            "accuracy": 0.9933360743955956,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9945173740393164
+        },
+        "(2, 0, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 0.953494501753292,
+            "accuracy": 0.9976927676908949,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9877968173610467
+        },
+        "(1, 2, 1)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9985855781499596,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9996463945374899
+        },
+        "(3, 3, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9976857871158256,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9994214467789564
+        },
+        "(2, 2, 0)": {
+            "coverage": 1.0,
+            "artifacts": 1,
+            "resolution": 1.0,
+            "accuracy": 0.9989001532096183,
+            "coverage_ref": 1,
+            "coverage_cand": 1,
+            "coverage_cand_only": 0,
+            "quality": 0.9997250383024046
+        }
+    },
+    "cell_size": 5,
+    "cell_dim": [
+        7,
+        6,
+        2
+    ],
+    "min_bound": [
+        -14.705062866210938,
+        -12.553461074829102,
+        -2.6695773601531982
+    ],
+    "max_bound": [
+        20.294937133789062,
+        17.4465389251709,
+        7.330422639846802
+    ],
+    "options": {
+        "wc": 0.25,
+        "wt": 0.25,
+        "wa": 0.25,
+        "wr": 0.25,
+        "e": 5
+    },
+    "gt_file": "/home/yashturkar/Downloads/change/pointcloud_3.ply",
+    "cnd_file": "/home/yashturkar/Downloads/base/pointcloud_3.ply",
+    "average": {
+        "coverage": 0.9795918367346939,
+        "artifacts": 0.96,
+        "resolution": 0.967036735653763,
+        "accuracy": 0.9924904970743998,
+        "quality": 0.9924904970743998
+    },
+    "variance": {
+        "coverage": 0.019223375624759707,
+        "artifacts": 0.03767781622452903,
+        "resolution": 0.005804887415893613,
+        "accuracy": 7.283173614659288e-05,
+        "quality": 0.08547007031292295
+    }
+}
