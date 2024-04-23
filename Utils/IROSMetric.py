@@ -212,7 +212,7 @@ def calculate_complete_quality_metric(pcdA,pcdB, e):
     # pcdA -> ref
     # pcdB -> cand
     # Normalized complete quality score
-    compute_flag = 1
+    compute_flag = 2
     if compute_flag == 1:
         validB_dist = calculate_Bvalid_dist(pcdA,pcdB,e)
     elif compute_flag == 2:
@@ -222,10 +222,10 @@ def calculate_complete_quality_metric(pcdA,pcdB, e):
     # Calculate the completeness metric
     normComp = calculate_completeness_metric(pcdA,validB_count)
     # Calculate the artifacts metric
-    # normArt = calculate_artifacts_metric(pcdB,validB_count)
+    normArt = calculate_artifacts_metric(pcdB,validB_count)
     # Calculate the resolution metric
     # normRes = calculate_resolution_metric(pcdA,pcdB)
     # Calculate the accuracy metric
     # normAcc = calculate_accuracy_metric(pcdB,e,validB_dist)
     # Calculate the complete quality metric
-    return normComp
+    return normComp,normArt

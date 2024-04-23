@@ -272,23 +272,36 @@ def iros_change(pcdA, pcdB, eps, threshold=0.95, horiz_sectors=8):
     sectored_B = sector_split_color(pcdB, horiz_sectors=horiz_sectors)
 
     # Compute change for each sector between pcdA and pcdB
-    change = []
+    change_comp = []
+    change_art = []
     for i in range(len(sectored_A)):
-        change.append(iros.calculate_complete_quality_metric(sectored_A[i], sectored_B[i], eps))
+        normComp, normArt = iros.calculate_complete_quality_metric(sectored_A[i], sectored_B[i], eps)
+        change_comp.append(normComp)
+        change_art.append(normArt)
 
     # Find the sectors with change below the threshold
     # change_selected = [c for c in change if c < threshold]
 
     # color the sectors based on the change
+    # for i in range(len(sectored_B)):
+    #     if change_comp[i] < threshold and change_art[i] < threshold:
+    #         sectored_B[i].paint_uniform_color([1, 0, 0]) # Red
+    #     elif change_comp[i] >= threshold and change_art[i] >= threshold:
+    #         sectored_B[i].paint_uniform_color([0, 1, 0]) # Green
+    #     else:
+    #         print (f"Change in sector {i}: {change_comp[i]}, {change_art[i]}")
+    #         sectored_B[i].paint_uniform_color([0, 0, 1]) # Blue
+
     for i in range(len(sectored_B)):
-        if change[i] < threshold:
+        if (change_comp[i] + change_art[i])/2 < threshold:
             sectored_B[i].paint_uniform_color([1, 0, 0]) # Red
-        elif change[i] > threshold:
+        elif (change_comp[i] + change_art[i])/2 >= threshold:
             sectored_B[i].paint_uniform_color([0, 1, 0]) # Green
         else:
+            print (f"Change in sector {i}: {change_comp[i]}, {change_art[i]}")
             sectored_B[i].paint_uniform_color([0, 0, 1]) # Blue
 
-    return sectored_B, change
+    return sectored_B, (change_comp, change_art)
 
 def cluster_change(pcdA, pcdB, eps, threshold=0.95):
     sectored_A = sector_split_color(pcdA)
@@ -334,6 +347,8 @@ def main():
     parser.add_argument('--eps', type=float, help='Threshold for change detection')
     # parser.add_argument('--output', type=str, help='Path to the output point cloud', default='output.ply')
     parser.add_argument('--viz',type=str, help='Visualize the output point cloud', default='False')
+    parser.add_argument('--horiz_sectors', type=int, help='Number of horizontal sectors', default=8)
+    parser.add_argument('--vert_sectors', type=int, help='Number of vertical sectors', default=1)
     args = parser.parse_args()
 
     # Load point clouds
@@ -354,18 +369,18 @@ def main():
     # for i in range(len(sectored)):
         # print(f"Number of points in sector {i}: {len(sectored[i].points)}")
 
-    sec_B, change = iros_change(pcdA, pcdB, args.eps, threshold=0.99, horiz_sectors=32)
+    sec_B, change = iros_change(pcdA, pcdB, args.eps, threshold=0.99, horiz_sectors=args.horiz_sectors)
 
     # clustered_pcds, change = cluster_change(pcdA, pcdB, args.eps)
 
     print (f"Change: {change}")
 
 
-    # radius, height = calculate_bounds(pcdB)
-    # wireframe = create_sector_wireframe_with_radials(radius, height)
+    radius, height = calculate_bounds(pcdB)
+    wireframe = create_sector_wireframe_with_radials(radius, height, horiz_sectors=args.horiz_sectors, vert_sectors=args.vert_sectors)
 
     sec_B.append(mesh_frame)
-    # sectored.append(wireframe)
+    sec_B.append(wireframe)
     o3d.visualization.draw_geometries(sec_B)
     # o3d.visualization.draw_geometries(clustered_pcds)
 
