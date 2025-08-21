@@ -1,0 +1,63 @@
+{
+    "gt_file": "/Users/yashturkar/Downloads/e3d/round_15/base_15_before.ply",
+    "cnd_file": [
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.001_0.02_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.001_0.02_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.005_0.02_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.005_0.02_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.05_0.02_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.05_0.02_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.1_0.02_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/artifact_0.1_0.02_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.4_X_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.4_X_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.4_Y_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.4_Y_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.4_Z_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.5_X_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.5_X_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.5_Y_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.5_Y_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.5_Z_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.6_X_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.6_X_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.6_Y_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.6_Y_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.6_Z_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_X_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_X_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_Y_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_Y_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_Z_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/coverage_0.75_Z_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.001_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.001_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.005_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.005_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.01_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/noise_0.01_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.2_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.2_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.4_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.4_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.5_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.5_15_before.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.75_15_after.ply",
+        "/Users/yashturkar/Downloads/e3d/round_15/resolution_0.75_15_before.ply"
+    ],
+    "save_path": "./results/round_15/",
+    "cell_size": [
+        0.1
+    ],
+    "weights": [
+        [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+        ]
+    ],
+    "eps": [
+        0.01
+    ]
+}

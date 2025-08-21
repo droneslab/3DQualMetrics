@@ -1,0 +1,21 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit",
+  "python":  "CPython 3.8.17",
+  "startedAt":  "2025-08-19T15:58:33.116685Z",
+  "args":  [
+    "--config",
+    "Config/round_0.json"
+  ],
+  "program":  "Applications/Empir3D_Framework/eval_config_cd_hf_app.py",
+  "codePath":  "Applications/Empir3D_Framework/eval_config_cd_hf_app.py",
+  "codePathLocal":  "Applications/Empir3D_Framework/eval_config_cd_hf_app.py",
+  "git":  {
+    "remote":  "https://github.com/droneslab/3DQualMetrics",
+    "commit":  "99bf946c0b143a1f058ea16d618c1ff9cbcc0802"
+  },
+  "email":  "yashturkar@gmail.com",
+  "root":  "/Users/yashturkar/Workspace/3DQualMetrics",
+  "host":  "Yashs-MBP-2.local",
+  "executable":  "/opt/miniconda3/envs/pqm_env/bin/python",
+  "writerId":  "xevro25oy58m0fsx8qgxcixzj64ezval"
+}
