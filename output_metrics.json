@@ -1,0 +1,1033 @@
+{
+    "metrics": {
+        "(4, 0, 1)": {
+            "coverage": 0.8989086731763355,
+            "artifacts": 0.9911336288790373,
+            "resolution": 0.6123198307597377,
+            "accuracy": 0.9042209028165491,
+            "coverage_ref": 1741,
+            "coverage_cand": 1565,
+            "coverage_cand_only": 14,
+            "quality": 0.8516457589079149
+        },
+        "(6, 0, 0)": {
+            "coverage": 0.932300357568534,
+            "artifacts": 0.9961793173713703,
+            "resolution": 0.5866306920949277,
+            "accuracy": 0.9186765112883752,
+            "coverage_ref": 4195,
+            "coverage_cand": 3911,
+            "coverage_cand_only": 15,
+            "quality": 0.8584467195808018
+        },
+        "(5, 7, 0)": {
+            "coverage": 0.9349684132292828,
+            "artifacts": 0.9956470122675108,
+            "resolution": 0.5928627389612229,
+            "accuracy": 0.919906356864451,
+            "coverage_ref": 2691,
+            "coverage_cand": 2516,
+            "coverage_cand_only": 11,
+            "quality": 0.860846130330617
+        },
+        "(3, 2, 1)": {
+            "coverage": 0.8906929544795593,
+            "artifacts": 0.9925686591276252,
+            "resolution": 0.6065837016196765,
+            "accuracy": 0.904816487453245,
+            "coverage_ref": 3449,
+            "coverage_cand": 3072,
+            "coverage_cand_only": 23,
+            "quality": 0.8486654506700265
+        },
+        "(1, 3, 0)": {
+            "coverage": 0.9321016166281755,
+            "artifacts": 0.9970355731225297,
+            "resolution": 0.5790124671811302,
+            "accuracy": 0.9173463300681739,
+            "coverage_ref": 4330,
+            "coverage_cand": 4036,
+            "coverage_cand_only": 12,
+            "quality": 0.8563739967500024
+        },
+        "(1, 1, 0)": {
+            "coverage": 0.9344326658814291,
+            "artifacts": 0.9979035639412998,
+            "resolution": 0.5861239809512786,
+            "accuracy": 0.9182098990370059,
+            "coverage_ref": 2547,
+            "coverage_cand": 2380,
+            "coverage_cand_only": 5,
+            "quality": 0.8591675274527533
+        },
+        "(6, 2, 0)": {
+            "coverage": 0.9352570320077594,
+            "artifacts": 0.9979301423027167,
+            "resolution": 0.5878551781569343,
+            "accuracy": 0.9182057179421624,
+            "coverage_ref": 4124,
+            "coverage_cand": 3857,
+            "coverage_cand_only": 8,
+            "quality": 0.8598120176023932
+        },
+        "(3, 6, 1)": {
+            "coverage": 0.8806682577565632,
+            "artifacts": 0.9914024717893606,
+            "resolution": 0.6125771334783199,
+            "accuracy": 0.9051380901064057,
+            "coverage_ref": 4190,
+            "coverage_cand": 3690,
+            "coverage_cand_only": 32,
+            "quality": 0.8474464882826624
+        },
+        "(3, 5, 0)": {
+            "coverage": 0.9315969149070679,
+            "artifacts": 0.9979683055668428,
+            "resolution": 0.5863537764991851,
+            "accuracy": 0.9161635683002107,
+            "coverage_ref": 7909,
+            "coverage_cand": 7368,
+            "coverage_cand_only": 15,
+            "quality": 0.8580206413183267
+        },
+        "(7, 1, 1)": {
+            "coverage": 0.8888888888888888,
+            "artifacts": 0.9944994499449945,
+            "resolution": 0.6100108616206256,
+            "accuracy": 0.8938668520176558,
+            "coverage_ref": 1017,
+            "coverage_cand": 904,
+            "coverage_cand_only": 5,
+            "quality": 0.8468165131180412
+        },
+        "(2, 0, 1)": {
+            "coverage": 0.7710219922380336,
+            "artifacts": 0.9916805324459235,
+            "resolution": 0.562906363343981,
+            "accuracy": 0.8762718689419726,
+            "coverage_ref": 773,
+            "coverage_cand": 596,
+            "coverage_cand_only": 5,
+            "quality": 0.8004701892424777
+        },
+        "(3, 7, 1)": {
+            "coverage": 0.9127272727272727,
+            "artifacts": 0.9920948616600791,
+            "resolution": 0.6119832516544235,
+            "accuracy": 0.9063358531312754,
+            "coverage_ref": 1100,
+            "coverage_cand": 1004,
+            "coverage_cand_only": 8,
+            "quality": 0.8557853097932626
+        },
+        "(1, 5, 0)": {
+            "coverage": 0.9367004852227614,
+            "artifacts": 0.9981198589894242,
+            "resolution": 0.5876883297317811,
+            "accuracy": 0.9189367995685953,
+            "coverage_ref": 4534,
+            "coverage_cand": 4247,
+            "coverage_cand_only": 8,
+            "quality": 0.8603613683781405
+        },
+        "(4, 2, 0)": {
+            "coverage": 0.9375156210947263,
+            "artifacts": 0.9980045230810164,
+            "resolution": 0.5762048948756852,
+            "accuracy": 0.9129784137536245,
+            "coverage_ref": 8002,
+            "coverage_cand": 7502,
+            "coverage_cand_only": 15,
+            "quality": 0.8561758632012632
+        },
+        "(7, 3, 0)": {
+            "coverage": 0.925421611492817,
+            "artifacts": 0.9966366204762546,
+            "resolution": 0.5774508336430992,
+            "accuracy": 0.9135350997973859,
+            "coverage_ref": 8005,
+            "coverage_cand": 7408,
+            "coverage_cand_only": 25,
+            "quality": 0.8532610413523891
+        },
+        "(2, 2, 0)": {
+            "coverage": 0.9363155859223927,
+            "artifacts": 0.9972538788960593,
+            "resolution": 0.5740197213565886,
+            "accuracy": 0.9161866478882693,
+            "coverage_ref": 7757,
+            "coverage_cand": 7263,
+            "coverage_cand_only": 20,
+            "quality": 0.8559439585158275
+        },
+        "(4, 6, 0)": {
+            "coverage": 0.9325519681556833,
+            "artifacts": 0.9965733191539643,
+            "resolution": 0.5724511056136827,
+            "accuracy": 0.9119779563464782,
+            "coverage_ref": 9044,
+            "coverage_cand": 8434,
+            "coverage_cand_only": 29,
+            "quality": 0.8533885873174522
+        },
+        "(2, 6, 0)": {
+            "coverage": 0.9379687301385534,
+            "artifacts": 0.996085313174946,
+            "resolution": 0.5741462992495306,
+            "accuracy": 0.914034853259073,
+            "coverage_ref": 7867,
+            "coverage_cand": 7379,
+            "coverage_cand_only": 29,
+            "quality": 0.8555587989555258
+        },
+        "(4, 7, 1)": {
+            "coverage": 0.9392712550607287,
+            "artifacts": 1,
+            "resolution": 0.6225034740463772,
+            "accuracy": 0.9137775894352465,
+            "coverage_ref": 247,
+            "coverage_cand": 232,
+            "coverage_cand_only": 0,
+            "quality": 0.8688880796355881
+        },
+        "(7, 3, 2)": {
+            "coverage": 0.9142857142857143,
+            "artifacts": 0.9846153846153847,
+            "resolution": 0.6375278894315622,
+            "accuracy": 0.9001861461540513,
+            "coverage_ref": 70,
+            "coverage_cand": 64,
+            "coverage_cand_only": 1,
+            "quality": 0.859153783621678
+        },
+        "(7, 4, 1)": {
+            "coverage": 0.8721704394141145,
+            "artifacts": 0.9984756097560976,
+            "resolution": 0.6099419561450635,
+            "accuracy": 0.8879923913924349,
+            "coverage_ref": 751,
+            "coverage_cand": 655,
+            "coverage_cand_only": 1,
+            "quality": 0.8421450991769277
+        },
+        "(5, 3, 0)": {
+            "coverage": 0.9333855799373041,
+            "artifacts": 0.9991610738255033,
+            "resolution": 0.5850180280941476,
+            "accuracy": 0.9165721810765306,
+            "coverage_ref": 2552,
+            "coverage_cand": 2382,
+            "coverage_cand_only": 2,
+            "quality": 0.8585342157333714
+        },
+        "(2, 7, 1)": {
+            "coverage": 0.9252136752136753,
+            "artifacts": 0.9942594718714122,
+            "resolution": 0.6147212685843105,
+            "accuracy": 0.9097612982716885,
+            "coverage_ref": 936,
+            "coverage_cand": 866,
+            "coverage_cand_only": 5,
+            "quality": 0.8609889284852716
+        },
+        "(5, 5, 0)": {
+            "coverage": 0.9411983624860439,
+            "artifacts": 0.9968466692944422,
+            "resolution": 0.5786915940541477,
+            "accuracy": 0.9197972216079985,
+            "coverage_ref": 2687,
+            "coverage_cand": 2529,
+            "coverage_cand_only": 8,
+            "quality": 0.8591334618606581
+        },
+        "(0, 3, 0)": {
+            "coverage": 0.9211752786220871,
+            "artifacts": 0.9951838879159369,
+            "resolution": 0.5752198839378831,
+            "accuracy": 0.9143108485067488,
+            "coverage_ref": 4935,
+            "coverage_cand": 4546,
+            "coverage_cand_only": 22,
+            "quality": 0.851472474745664
+        },
+        "(2, 4, 0)": {
+            "coverage": 0.9274836838288615,
+            "artifacts": 0.9961059190031153,
+            "resolution": 0.5729251173773332,
+            "accuracy": 0.9131261953980272,
+            "coverage_ref": 6895,
+            "coverage_cand": 6395,
+            "coverage_cand_only": 25,
+            "quality": 0.8524102289018343
+        },
+        "(7, 5, 0)": {
+            "coverage": 0.9193776520509194,
+            "artifacts": 0.9977565237926556,
+            "resolution": 0.5747573859373157,
+            "accuracy": 0.9135979005604037,
+            "coverage_ref": 9191,
+            "coverage_cand": 8450,
+            "coverage_cand_only": 19,
+            "quality": 0.8513723655853236
+        },
+        "(0, 6, 1)": {
+            "coverage": 0.8559322033898306,
+            "artifacts": 0.9967105263157895,
+            "resolution": 0.5195723307699726,
+            "accuracy": 0.9025262102874231,
+            "coverage_ref": 354,
+            "coverage_cand": 303,
+            "coverage_cand_only": 1,
+            "quality": 0.8186853176907539
+        },
+        "(1, 2, 1)": {
+            "coverage": 0.8701517706576728,
+            "artifacts": 0.9894534995206136,
+            "resolution": 0.5922131452240366,
+            "accuracy": 0.8922168627295313,
+            "coverage_ref": 1186,
+            "coverage_cand": 1032,
+            "coverage_cand_only": 11,
+            "quality": 0.8360088195329636
+        },
+        "(3, 3, 1)": {
+            "coverage": 0.8980582524271845,
+            "artifacts": 0.9956942949407965,
+            "resolution": 0.5927073608386922,
+            "accuracy": 0.8968197336644899,
+            "coverage_ref": 1030,
+            "coverage_cand": 925,
+            "coverage_cand_only": 4,
+            "quality": 0.8458199104677908
+        },
+        "(4, 4, 0)": {
+            "coverage": 0.9207097310784585,
+            "artifacts": 0.9961007798440312,
+            "resolution": 0.5823507165377637,
+            "accuracy": 0.9151397395841211,
+            "coverage_ref": 3607,
+            "coverage_cand": 3321,
+            "coverage_cand_only": 13,
+            "quality": 0.8535752417610936
+        },
+        "(5, 6, 0)": {
+            "coverage": 0.9436828454983327,
+            "artifacts": 0.9968688845401175,
+            "resolution": 0.5893637936879426,
+            "accuracy": 0.9147013387826718,
+            "coverage_ref": 2699,
+            "coverage_cand": 2547,
+            "coverage_cand_only": 8,
+            "quality": 0.8611542156272661
+        },
+        "(2, 0, 0)": {
+            "coverage": 0.9028815368196371,
+            "artifacts": 0.9957627118644068,
+            "resolution": 0.5670595050109164,
+            "accuracy": 0.9134572059685169,
+            "coverage_ref": 4685,
+            "coverage_cand": 4230,
+            "coverage_cand_only": 18,
+            "quality": 0.8447902399158693
+        },
+        "(3, 4, 0)": {
+            "coverage": 0.9153807020518908,
+            "artifacts": 0.9957572403615569,
+            "resolution": 0.5747859153740422,
+            "accuracy": 0.9150383252981849,
+            "coverage_ref": 5897,
+            "coverage_cand": 5398,
+            "coverage_cand_only": 23,
+            "quality": 0.8502405457714187
+        },
+        "(4, 0, 0)": {
+            "coverage": 0.9271887373515179,
+            "artifacts": 0.9966895247103335,
+            "resolution": 0.5759588841053863,
+            "accuracy": 0.9127960481345523,
+            "coverage_ref": 9092,
+            "coverage_cand": 8430,
+            "coverage_cand_only": 28,
+            "quality": 0.8531582985754476
+        },
+        "(7, 1, 0)": {
+            "coverage": 0.9232380353963766,
+            "artifacts": 0.9966086366719421,
+            "resolution": 0.5749223423104067,
+            "accuracy": 0.9106702308295214,
+            "coverage_ref": 9549,
+            "coverage_cand": 8816,
+            "coverage_cand_only": 30,
+            "quality": 0.8513598113020617
+        },
+        "(1, 3, 1)": {
+            "coverage": 0.8333333333333334,
+            "artifacts": 1,
+            "resolution": 0.6354811306728068,
+            "accuracy": 0.9022952155499946,
+            "coverage_ref": 24,
+            "coverage_cand": 20,
+            "coverage_cand_only": 0,
+            "quality": 0.8427774198890337
+        },
+        "(4, 5, 1)": {
+            "coverage": 0.8959687906371911,
+            "artifacts": 0.9971056439942113,
+            "resolution": 0.601057436820196,
+            "accuracy": 0.9024105656816575,
+            "coverage_ref": 769,
+            "coverage_cand": 689,
+            "coverage_cand_only": 2,
+            "quality": 0.849135609283314
+        },
+        "(6, 1, 0)": {
+            "coverage": 0.9415630133771415,
+            "artifacts": 0.9970178926441352,
+            "resolution": 0.5867237326884328,
+            "accuracy": 0.9179932320915697,
+            "coverage_ref": 4261,
+            "coverage_cand": 4012,
+            "coverage_cand_only": 12,
+            "quality": 0.8608244677003197
+        },
+        "(2, 1, 1)": {
+            "coverage": 0.8961309523809524,
+            "artifacts": 0.9940574447012215,
+            "resolution": 0.6102576757449026,
+            "accuracy": 0.9055308477282519,
+            "coverage_ref": 3360,
+            "coverage_cand": 3011,
+            "coverage_cand_only": 18,
+            "quality": 0.8514942301388321
+        },
+        "(6, 5, 0)": {
+            "coverage": 0.9357601713062098,
+            "artifacts": 0.9956962025316456,
+            "resolution": 0.5836880520379609,
+            "accuracy": 0.9170032912262421,
+            "coverage_ref": 4203,
+            "coverage_cand": 3933,
+            "coverage_cand_only": 17,
+            "quality": 0.8580369292755146
+        },
+        "(2, 3, 1)": {
+            "coverage": 0.907477138246369,
+            "artifacts": 0.9970449172576832,
+            "resolution": 0.6130490951582586,
+            "accuracy": 0.9055068779734038,
+            "coverage_ref": 1859,
+            "coverage_cand": 1687,
+            "coverage_cand_only": 5,
+            "quality": 0.8557695071589285
+        },
+        "(5, 1, 0)": {
+            "coverage": 0.9386775027705948,
+            "artifacts": 0.9988207547169812,
+            "resolution": 0.5834458546108994,
+            "accuracy": 0.9179468723476372,
+            "coverage_ref": 2707,
+            "coverage_cand": 2541,
+            "coverage_cand_only": 3,
+            "quality": 0.8597227461115282
+        },
+        "(1, 4, 0)": {
+            "coverage": 0.9190031152647975,
+            "artifacts": 0.9950935295921497,
+            "resolution": 0.5799003939580892,
+            "accuracy": 0.9194717073631591,
+            "coverage_ref": 3531,
+            "coverage_cand": 3245,
+            "coverage_cand_only": 16,
+            "quality": 0.8533671865445489
+        },
+        "(6, 7, 0)": {
+            "coverage": 0.9256926952141058,
+            "artifacts": 0.9939148073022313,
+            "resolution": 0.5917937159671163,
+            "accuracy": 0.9170178130757193,
+            "coverage_ref": 3176,
+            "coverage_cand": 2940,
+            "coverage_cand_only": 18,
+            "quality": 0.8571047578897931
+        },
+        "(0, 1, 0)": {
+            "coverage": 0.9375,
+            "artifacts": 0.9983566146261298,
+            "resolution": 0.596916067764588,
+            "accuracy": 0.9245599268220968,
+            "coverage_ref": 1296,
+            "coverage_cand": 1215,
+            "coverage_cand_only": 2,
+            "quality": 0.8643331523032036
+        },
+        "(4, 6, 1)": {
+            "coverage": 0.8941082802547771,
+            "artifacts": 0.9920494699646644,
+            "resolution": 0.6126884913880881,
+            "accuracy": 0.9064423382711114,
+            "coverage_ref": 1256,
+            "coverage_cand": 1123,
+            "coverage_cand_only": 9,
+            "quality": 0.8513221449696603
+        },
+        "(1, 6, 0)": {
+            "coverage": 0.9424807903402854,
+            "artifacts": 0.9974442379182156,
+            "resolution": 0.5827223795939839,
+            "accuracy": 0.9184830554451104,
+            "coverage_ref": 4555,
+            "coverage_cand": 4293,
+            "coverage_cand_only": 11,
+            "quality": 0.8602826158243988
+        },
+        "(2, 5, 1)": {
+            "coverage": 0.8995257854179016,
+            "artifacts": 0.9954083306001967,
+            "resolution": 0.6108724115985751,
+            "accuracy": 0.9096034067764364,
+            "coverage_ref": 3374,
+            "coverage_cand": 3035,
+            "coverage_cand_only": 14,
+            "quality": 0.8538524835982775
+        },
+        "(7, 6, 1)": {
+            "coverage": 0.8683255572835666,
+            "artifacts": 0.995049504950495,
+            "resolution": 0.5655533917001822,
+            "accuracy": 0.9044972523712468,
+            "coverage_ref": 5787,
+            "coverage_cand": 5025,
+            "coverage_cand_only": 25,
+            "quality": 0.8333564265763727
+        },
+        "(4, 7, 0)": {
+            "coverage": 0.9387860971813937,
+            "artifacts": 0.9974278890317839,
+            "resolution": 0.5845289410282297,
+            "accuracy": 0.9193616830012129,
+            "coverage_ref": 5783,
+            "coverage_cand": 5429,
+            "coverage_cand_only": 14,
+            "quality": 0.8600261525606551
+        },
+        "(7, 4, 0)": {
+            "coverage": 0.9292763157894737,
+            "artifacts": 0.9956621933035109,
+            "resolution": 0.5761247054931685,
+            "accuracy": 0.91306396674152,
+            "coverage_ref": 7904,
+            "coverage_cand": 7345,
+            "coverage_cand_only": 32,
+            "quality": 0.8535317953319183
+        },
+        "(3, 0, 0)": {
+            "coverage": 0.9278583925079757,
+            "artifacts": 0.9970142651774854,
+            "resolution": 0.5731274053209098,
+            "accuracy": 0.9155596146671217,
+            "coverage_ref": 9717,
+            "coverage_cand": 9016,
+            "coverage_cand_only": 27,
+            "quality": 0.8533899194183732
+        },
+        "(0, 5, 0)": {
+            "coverage": 0.9431864545083639,
+            "artifacts": 0.9980572045331895,
+            "resolution": 0.5730411849802828,
+            "accuracy": 0.9129299823696585,
+            "coverage_ref": 9804,
+            "coverage_cand": 9247,
+            "coverage_cand_only": 18,
+            "quality": 0.8568037065978737
+        },
+        "(4, 1, 1)": {
+            "coverage": 0.8991331757289204,
+            "artifacts": 0.994768962510898,
+            "resolution": 0.593106546498084,
+            "accuracy": 0.9036704970837338,
+            "coverage_ref": 1269,
+            "coverage_cand": 1141,
+            "coverage_cand_only": 6,
+            "quality": 0.847669795455409
+        },
+        "(1, 0, 0)": {
+            "coverage": 0.9359145527369827,
+            "artifacts": 0.9957386363636364,
+            "resolution": 0.5860007117568327,
+            "accuracy": 0.9224821675612862,
+            "coverage_ref": 749,
+            "coverage_cand": 701,
+            "coverage_cand_only": 3,
+            "quality": 0.8600340171046845
+        },
+        "(3, 1, 1)": {
+            "coverage": 0.8706276952563489,
+            "artifacts": 0.9912711402073104,
+            "resolution": 0.6053285823664231,
+            "accuracy": 0.9014665042695661,
+            "coverage_ref": 4174,
+            "coverage_cand": 3634,
+            "coverage_cand_only": 32,
+            "quality": 0.8421734805249121
+        },
+        "(5, 4, 0)": {
+            "coverage": 0.931415057154119,
+            "artifacts": 0.9953664700926707,
+            "resolution": 0.5871528008085793,
+            "accuracy": 0.9187338060538645,
+            "coverage_ref": 2537,
+            "coverage_cand": 2363,
+            "coverage_cand_only": 11,
+            "quality": 0.8581670335273084
+        },
+        "(3, 6, 0)": {
+            "coverage": 0.9394338380513496,
+            "artifacts": 0.9974370922646785,
+            "resolution": 0.5897313780797847,
+            "accuracy": 0.9189882077481033,
+            "coverage_ref": 4557,
+            "coverage_cand": 4281,
+            "coverage_cand_only": 11,
+            "quality": 0.861397629035979
+        },
+        "(2, 7, 0)": {
+            "coverage": 0.9309964118134143,
+            "artifacts": 0.996307783193029,
+            "resolution": 0.582147545697279,
+            "accuracy": 0.916552878747471,
+            "coverage_ref": 7246,
+            "coverage_cand": 6746,
+            "coverage_cand_only": 25,
+            "quality": 0.8565011548627983
+        },
+        "(3, 2, 0)": {
+            "coverage": 0.9263795601211642,
+            "artifacts": 0.9978720385870337,
+            "resolution": 0.5768592408426895,
+            "accuracy": 0.9155824183677984,
+            "coverage_ref": 7593,
+            "coverage_cand": 7034,
+            "coverage_cand_only": 15,
+            "quality": 0.8541733144796714
+        },
+        "(0, 6, 0)": {
+            "coverage": 0.9394442140190792,
+            "artifacts": 0.9956043956043956,
+            "resolution": 0.5784741015701295,
+            "accuracy": 0.9142143256165863,
+            "coverage_ref": 7233,
+            "coverage_cand": 6795,
+            "coverage_cand_only": 30,
+            "quality": 0.8569342592025477
+        },
+        "(0, 2, 0)": {
+            "coverage": 0.9329111600587372,
+            "artifacts": 0.9970573810691515,
+            "resolution": 0.5749889013785531,
+            "accuracy": 0.9133908162789008,
+            "coverage_ref": 10896,
+            "coverage_cand": 10165,
+            "coverage_cand_only": 30,
+            "quality": 0.8545870646963356
+        },
+        "(4, 2, 1)": {
+            "coverage": 0.90920245398773,
+            "artifacts": 0.9973082099596231,
+            "resolution": 0.6023361899551097,
+            "accuracy": 0.9084333937026572,
+            "coverage_ref": 815,
+            "coverage_cand": 741,
+            "coverage_cand_only": 2,
+            "quality": 0.85432006190128
+        },
+        "(4, 3, 0)": {
+            "coverage": 0.9358091490408263,
+            "artifacts": 0.9968561697668326,
+            "resolution": 0.5802296794007928,
+            "accuracy": 0.9160607400572903,
+            "coverage_ref": 4066,
+            "coverage_cand": 3805,
+            "coverage_cand_only": 12,
+            "quality": 0.8572389345664356
+        },
+        "(3, 4, 1)": {
+            "coverage": 0.8907657657657657,
+            "artifacts": 0.9912280701754386,
+            "resolution": 0.6106817444775074,
+            "accuracy": 0.9028995809878102,
+            "coverage_ref": 888,
+            "coverage_cand": 791,
+            "coverage_cand_only": 7,
+            "quality": 0.8488937903516305
+        },
+        "(7, 0, 0)": {
+            "coverage": 0.9435606886031815,
+            "artifacts": 0.9981558321807285,
+            "resolution": 0.5871190715280761,
+            "accuracy": 0.9222815219778324,
+            "coverage_ref": 4589,
+            "coverage_cand": 4330,
+            "coverage_cand_only": 8,
+            "quality": 0.8627792785724546
+        },
+        "(3, 7, 0)": {
+            "coverage": 0.9288628250892402,
+            "artifacts": 0.9980821917808219,
+            "resolution": 0.577667034584501,
+            "accuracy": 0.9159510104746302,
+            "coverage_ref": 7844,
+            "coverage_cand": 7286,
+            "coverage_cand_only": 14,
+            "quality": 0.8551407654822983
+        },
+        "(2, 1, 0)": {
+            "coverage": 0.9312802239755663,
+            "artifacts": 0.9972744617061869,
+            "resolution": 0.5689779369418742,
+            "accuracy": 0.9158656934678004,
+            "coverage_ref": 7858,
+            "coverage_cand": 7318,
+            "coverage_cand_only": 20,
+            "quality": 0.8533495790228569
+        },
+        "(4, 5, 0)": {
+            "coverage": 0.931047619047619,
+            "artifacts": 0.9978225367446925,
+            "resolution": 0.579836720218903,
+            "accuracy": 0.9144703493134055,
+            "coverage_ref": 7875,
+            "coverage_cand": 7332,
+            "coverage_cand_only": 16,
+            "quality": 0.8557943063311549
+        },
+        "(1, 2, 0)": {
+            "coverage": 0.9342997184273647,
+            "artifacts": 0.9972172751558326,
+            "resolution": 0.5758494358842667,
+            "accuracy": 0.9132323767714943,
+            "coverage_ref": 9589,
+            "coverage_cand": 8959,
+            "coverage_cand_only": 25,
+            "quality": 0.8551497015597396
+        },
+        "(2, 3, 0)": {
+            "coverage": 0.9337380521828985,
+            "artifacts": 0.9964162646450724,
+            "resolution": 0.573782978524328,
+            "accuracy": 0.9158608959670644,
+            "coverage_ref": 7742,
+            "coverage_cand": 7229,
+            "coverage_cand_only": 26,
+            "quality": 0.8549495478298408
+        },
+        "(1, 7, 0)": {
+            "coverage": 0.9379522034641526,
+            "artifacts": 0.9967381174277726,
+            "resolution": 0.5825925306884281,
+            "accuracy": 0.9194188658958756,
+            "coverage_ref": 4561,
+            "coverage_cand": 4278,
+            "coverage_cand_only": 14,
+            "quality": 0.8591754293690573
+        },
+        "(2, 2, 1)": {
+            "coverage": 0.8955895589558955,
+            "artifacts": 0.9923537234042553,
+            "resolution": 0.6149346413584391,
+            "accuracy": 0.9087040159110933,
+            "coverage_ref": 3333,
+            "coverage_cand": 2985,
+            "coverage_cand_only": 23,
+            "quality": 0.8528954849074208
+        },
+        "(7, 3, 1)": {
+            "coverage": 0.9139633286318759,
+            "artifacts": 0.9961568024596464,
+            "resolution": 0.5706321617994005,
+            "accuracy": 0.9064951350248837,
+            "coverage_ref": 4254,
+            "coverage_cand": 3888,
+            "coverage_cand_only": 15,
+            "quality": 0.8468118569789517
+        },
+        "(5, 0, 0)": {
+            "coverage": 0.9420547458229648,
+            "artifacts": 0.9966152688980819,
+            "resolution": 0.5924622378077032,
+            "accuracy": 0.9199755956239466,
+            "coverage_ref": 2813,
+            "coverage_cand": 2650,
+            "coverage_cand_only": 9,
+            "quality": 0.8627769620381741
+        },
+        "(6, 6, 0)": {
+            "coverage": 0.9296172617518623,
+            "artifacts": 0.9939577039274925,
+            "resolution": 0.5803414804916875,
+            "accuracy": 0.9191046030774241,
+            "coverage_ref": 3893,
+            "coverage_cand": 3619,
+            "coverage_cand_only": 22,
+            "quality": 0.8557552623121167
+        },
+        "(2, 6, 1)": {
+            "coverage": 0.8861740166865316,
+            "artifacts": 0.9966487935656837,
+            "resolution": 0.6083367670666019,
+            "accuracy": 0.9066059521128174,
+            "coverage_ref": 3356,
+            "coverage_cand": 2974,
+            "coverage_cand_only": 10,
+            "quality": 0.8494413823579087
+        },
+        "(7, 2, 0)": {
+            "coverage": 0.92233119152294,
+            "artifacts": 0.9963468095470044,
+            "resolution": 0.5740326275717551,
+            "accuracy": 0.912943057856084,
+            "coverage_ref": 8871,
+            "coverage_cand": 8182,
+            "coverage_cand_only": 30,
+            "quality": 0.8514134216244458
+        },
+        "(2, 5, 0)": {
+            "coverage": 0.9389927310488058,
+            "artifacts": 0.9976554957936836,
+            "resolution": 0.5830818406869394,
+            "accuracy": 0.9165017226785892,
+            "coverage_ref": 7704,
+            "coverage_cand": 7234,
+            "coverage_cand_only": 17,
+            "quality": 0.8590579475520045
+        },
+        "(7, 6, 0)": {
+            "coverage": 0.9062605372597505,
+            "artifacts": 0.9944499259990133,
+            "resolution": 0.5720225555717688,
+            "accuracy": 0.9100998523986006,
+            "coverage_ref": 8897,
+            "coverage_cand": 8063,
+            "coverage_cand_only": 45,
+            "quality": 0.8457082178072832
+        },
+        "(7, 6, 2)": {
+            "coverage": 0.9210526315789473,
+            "artifacts": 1,
+            "resolution": 0.6092694876792688,
+            "accuracy": 0.9165603627655879,
+            "coverage_ref": 76,
+            "coverage_cand": 70,
+            "coverage_cand_only": 0,
+            "quality": 0.861720620505951
+        },
+        "(0, 3, 1)": {
+            "coverage": 0.9,
+            "artifacts": 0.972972972972973,
+            "resolution": 0.6081924936336662,
+            "accuracy": 0.9170588253011984,
+            "coverage_ref": 40,
+            "coverage_cand": 36,
+            "coverage_cand_only": 1,
+            "quality": 0.8495560729769595
+        },
+        "(2, 4, 1)": {
+            "coverage": 0.914490861618799,
+            "artifacts": 0.9950284090909091,
+            "resolution": 0.5873276211702837,
+            "accuracy": 0.8972191323575768,
+            "coverage_ref": 1532,
+            "coverage_cand": 1401,
+            "coverage_cand_only": 7,
+            "quality": 0.8485165060593921
+        },
+        "(0, 4, 0)": {
+            "coverage": 0.9257411212210156,
+            "artifacts": 0.9971546000632311,
+            "resolution": 0.5885373626569507,
+            "accuracy": 0.918381014218347,
+            "coverage_ref": 3407,
+            "coverage_cand": 3154,
+            "coverage_cand_only": 9,
+            "quality": 0.8574535245398861
+        },
+        "(3, 0, 1)": {
+            "coverage": 0.8241978609625669,
+            "artifacts": 0.9943548387096774,
+            "resolution": 0.5651795012313248,
+            "accuracy": 0.8906137297509333,
+            "coverage_ref": 1496,
+            "coverage_cand": 1233,
+            "coverage_cand_only": 7,
+            "quality": 0.8185864826636255
+        },
+        "(7, 7, 0)": {
+            "coverage": 0.9375565610859729,
+            "artifacts": 0.992020427705075,
+            "resolution": 0.582628204979994,
+            "accuracy": 0.9204054045531675,
+            "coverage_ref": 3315,
+            "coverage_cand": 3108,
+            "coverage_cand_only": 25,
+            "quality": 0.8581526495810523
+        },
+        "(0, 5, 1)": {
+            "coverage": 0.9027516019600452,
+            "artifacts": 0.9929519071310116,
+            "resolution": 0.601496854840085,
+            "accuracy": 0.9072987866689692,
+            "coverage_ref": 2653,
+            "coverage_cand": 2395,
+            "coverage_cand_only": 17,
+            "quality": 0.8511247876500276
+        },
+        "(3, 3, 0)": {
+            "coverage": 0.9300604229607251,
+            "artifacts": 0.997246517654681,
+            "resolution": 0.5778537647681388,
+            "accuracy": 0.9147734981407977,
+            "coverage_ref": 6620,
+            "coverage_cand": 6157,
+            "coverage_cand_only": 17,
+            "quality": 0.8549835508810857
+        },
+        "(4, 1, 0)": {
+            "coverage": 0.9296177615014878,
+            "artifacts": 0.9970541303547318,
+            "resolution": 0.5688681637537563,
+            "accuracy": 0.9134332421054872,
+            "coverage_ref": 8738,
+            "coverage_cand": 8123,
+            "coverage_cand_only": 24,
+            "quality": 0.8522433244288657
+        },
+        "(0, 2, 1)": {
+            "coverage": 0.8681218735788995,
+            "artifacts": 0.9968668407310705,
+            "resolution": 0.6075997688121634,
+            "accuracy": 0.8923338858110418,
+            "coverage_ref": 2199,
+            "coverage_cand": 1909,
+            "coverage_cand_only": 6,
+            "quality": 0.8412305922332938
+        },
+        "(0, 7, 0)": {
+            "coverage": 0.9381014873140857,
+            "artifacts": 0.9972099511741456,
+            "resolution": 0.5853882377318678,
+            "accuracy": 0.919344929775657,
+            "coverage_ref": 4572,
+            "coverage_cand": 4289,
+            "coverage_cand_only": 12,
+            "quality": 0.860011151498939
+        },
+        "(3, 1, 0)": {
+            "coverage": 0.9395257776810964,
+            "artifacts": 0.9976899976899977,
+            "resolution": 0.5848219091956234,
+            "accuracy": 0.9184228214148802,
+            "coverage_ref": 4597,
+            "coverage_cand": 4319,
+            "coverage_cand_only": 10,
+            "quality": 0.8601151264953995
+        },
+        "(5, 2, 0)": {
+            "coverage": 0.9345347554247885,
+            "artifacts": 0.9976442873969376,
+            "resolution": 0.5808528173635976,
+            "accuracy": 0.9194643632227957,
+            "coverage_ref": 2719,
+            "coverage_cand": 2541,
+            "coverage_cand_only": 6,
+            "quality": 0.8581240558520298
+        },
+        "(3, 5, 1)": {
+            "coverage": 0.8687010078387458,
+            "artifacts": 0.99042451324609,
+            "resolution": 0.6041391841939657,
+            "accuracy": 0.9016701656461903,
+            "coverage_ref": 3572,
+            "coverage_cand": 3103,
+            "coverage_cand_only": 30,
+            "quality": 0.841233717731248
+        },
+        "(6, 3, 0)": {
+            "coverage": 0.9306588735387885,
+            "artifacts": 0.995736213757817,
+            "resolution": 0.5882841540730516,
+            "accuracy": 0.9167172380235725,
+            "coverage_ref": 3764,
+            "coverage_cand": 3503,
+            "coverage_cand_only": 15,
+            "quality": 0.8578491198483074
+        },
+        "(6, 4, 0)": {
+            "coverage": 0.9284299858557284,
+            "artifacts": 0.9951485748938751,
+            "resolution": 0.5851376849462567,
+            "accuracy": 0.9171682654432508,
+            "coverage_ref": 3535,
+            "coverage_cand": 3282,
+            "coverage_cand_only": 16,
+            "quality": 0.8564711277847777
+        },
+        "(7, 2, 1)": {
+            "coverage": 0.9098770176787087,
+            "artifacts": 0.9939126784214946,
+            "resolution": 0.5900486598632021,
+            "accuracy": 0.8997869826407136,
+            "coverage_ref": 5204,
+            "coverage_cand": 4735,
+            "coverage_cand_only": 29,
+            "quality": 0.8484063346510297
+        },
+        "(7, 5, 1)": {
+            "coverage": 0.8996466431095407,
+            "artifacts": 0.9968676585747847,
+            "resolution": 0.5962418325956712,
+            "accuracy": 0.898685174515506,
+            "coverage_ref": 4245,
+            "coverage_cand": 3819,
+            "coverage_cand_only": 12,
+            "quality": 0.8478603271988756
+        }
+    },
+    "cell_size": 5,
+    "cell_dim": [
+        8,
+        8,
+        3
+    ],
+    "min_bound": [
+        -32.029998779296875,
+        16.920000076293945,
+        -0.4000000059604645
+    ],
+    "max_bound": [
+        7.970001220703125,
+        56.920000076293945,
+        14.599999994039536
+    ],
+    "options": {
+        "wc": 0.25,
+        "wt": 0.25,
+        "wa": 0.25,
+        "wr": 0.25,
+        "e": 0.1
+    },
+    "gt_file": "./subsample_noise_01_20_220_441_gt.pcd",
+    "cnd_file": "/Users/yashturkar/Workspace/3DQualMetrics/city_block_resolution_degraded/city_block_res_0.54_vox_0.0708.pcd",
+    "average": {
+        "coverage": 0.9239703593579409,
+        "artifacts": 0.9963378771710978,
+        "resolution": 0.5880703935942534,
+        "accuracy": 0.9113969407388738,
+        "quality": 0.9113969407388738
+    },
+    "variance": {
+        "coverage": 0.0008225220612053442,
+        "artifacts": 1.1174651177524397e-05,
+        "resolution": 0.0002900460237177728,
+        "accuracy": 7.348742546000799e-05,
+        "quality": 8.950409836622969e-05
+    }
+}

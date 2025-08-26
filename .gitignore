@@ -1,3 +1,5 @@
 results/*
 ./Applications/Empir3D_Framework/__pycache__/*
 *.pyc
+*.pcd
+wandb/

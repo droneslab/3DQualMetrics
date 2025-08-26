@@ -1,0 +1,18 @@
+{
+    "gt_file": "/Users/yashturkar/Workspace/3DQualMetrics/subsample_noise_01_20_220_441_gt.pcd",
+    "cnd_file": [
+        "/Users/yashturkar/Workspace/3DQualMetrics/subsample_noise_01_20_220_441_gt.pcd"
+        
+    ],
+    "save_path": "./results/",
+    "cell_size": [
+        0.2
+    ],
+    "weights": [ 
+        [0.25,0.25, 0.25,0.25]
+    ],
+    "eps": [
+        0.1
+    ]
+
+}

@@ -1,0 +1,180 @@
+Name:              25-08-22-02-11-28_base
+Num grasps:        253
+Success rate:      27.66798418972332
+Percent cleared:   28.225806451612907
+Avg planning time: 0.9552035020745319
+==========
+Name:              25-08-22-02-23-34_resolution_0.2
+Num grasps:        252
+Success rate:      42.857142857142854
+Percent cleared:   43.54838709677419
+Avg planning time: 0.4571118525096348
+==========
+Name:              25-08-22-02-37-39_resolution_0.15
+Num grasps:        249
+Success rate:      54.21686746987952
+Percent cleared:   54.43548387096774
+Avg planning time: 0.4172623109626004
+==========
+Name:              25-08-22-02-53-25_resolution_0.1
+Num grasps:        266
+Success rate:      61.65413533834586
+Percent cleared:   66.12903225806451
+Avg planning time: 0.3700309740869622
+==========
+Name:              25-08-22-03-10-59_resolution_0.05
+Num grasps:        267
+Success rate:      77.90262172284645
+Percent cleared:   83.87096774193549
+Avg planning time: 0.3566844231180484
+==========
+Name:              25-08-22-03-31-11_coverage_0.4_X
+Num grasps:        223
+Success rate:      10.31390134529148
+Percent cleared:   9.274193548387096
+Avg planning time: 1.099476936152163
+==========
+Name:              25-08-22-03-41-44_coverage_0.4_Y
+Num grasps:        217
+Success rate:      11.981566820276496
+Percent cleared:   10.483870967741936
+Avg planning time: 1.201338843815887
+==========
+Name:              25-08-22-03-53-18_coverage_0.4_Z
+Num grasps:        10
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.32997167110443115
+==========
+Name:              25-08-22-03-58-46_coverage_0.5_X
+Num grasps:        229
+Success rate:      14.41048034934498
+Percent cleared:   13.306451612903224
+Avg planning time: 1.1433198285415183
+==========
+Name:              25-08-22-04-10-17_coverage_0.5_Y
+Num grasps:        243
+Success rate:      21.810699588477366
+Percent cleared:   21.370967741935484
+Avg planning time: 1.1733722088268264
+==========
+Name:              25-08-22-04-23-44_coverage_0.5_Z
+Num grasps:        20
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.32051748037338257
+==========
+Name:              25-08-22-04-29-12_coverage_0.6_X
+Num grasps:        236
+Success rate:      18.64406779661017
+Percent cleared:   17.741935483870968
+Avg planning time: 1.2066395070593237
+==========
+Name:              25-08-22-04-41-42_coverage_0.6_Y
+Num grasps:        245
+Success rate:      27.755102040816325
+Percent cleared:   27.419354838709676
+Avg planning time: 1.237585805386913
+==========
+Name:              25-08-22-04-57-04_coverage_0.6_Z
+Num grasps:        104
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.33890591676418597
+==========
+Name:              25-08-22-05-02-46_coverage_0.75_X
+Num grasps:        236
+Success rate:      24.152542372881356
+Percent cleared:   22.983870967741936
+Avg planning time: 1.195577407287339
+==========
+Name:              25-08-22-05-16-24_coverage_0.75_Y
+Num grasps:        243
+Success rate:      25.514403292181072
+Percent cleared:   25.0
+Avg planning time: 1.2791475023261805
+==========
+Name:              25-08-22-05-31-04_coverage_0.75_Z
+Num grasps:        141
+Success rate:      0.7092198581560284
+Percent cleared:   0.6944444444444444
+Avg planning time: 0.3644231008299699
+==========
+Name:              25-08-22-05-37-08_noise_0.0005
+Num grasps:        255
+Success rate:      30.58823529411765
+Percent cleared:   31.451612903225808
+Avg planning time: 1.0285464969335818
+==========
+Name:              25-08-22-05-50-19_noise_0.001
+Num grasps:        250
+Success rate:      22.0
+Percent cleared:   22.177419354838708
+Avg planning time: 1.1073568964004517
+==========
+Name:              25-08-22-06-01-44_noise_0.0015
+Num grasps:        249
+Success rate:      17.269076305220885
+Percent cleared:   17.338709677419356
+Avg planning time: 1.1556009614323994
+==========
+Name:              25-08-22-06-12-12_noise_0.002
+Num grasps:        248
+Success rate:      10.887096774193548
+Percent cleared:   10.887096774193548
+Avg planning time: 1.1639624651401275
+==========
+Name:              25-08-22-06-21-05_noise_0.0025
+Num grasps:        250
+Success rate:      7.6
+Percent cleared:   7.661290322580645
+Avg planning time: 1.1737902383804322
+==========
+Name:              25-08-22-06-29-30_noise_0.004
+Num grasps:        248
+Success rate:      1.6129032258064515
+Percent cleared:   1.6129032258064515
+Avg planning time: 1.0242516446498133
+==========
+Name:              25-08-22-06-36-31_noise_0.005
+Num grasps:        249
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.8968538146421133
+==========
+Name:              25-08-22-06-43-12_noise_0.0075
+Num grasps:        248
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.7186663170014659
+==========
+Name:              25-08-22-06-49-40_noise_0.01
+Num grasps:        248
+Success rate:      0.0
+Percent cleared:   0.0
+Avg planning time: 0.6499047827336096
+==========
+Name:              25-08-22-06-56-04_artifact_0.005_0.02
+Num grasps:        240
+Success rate:      27.500000000000004
+Percent cleared:   26.61290322580645
+Avg planning time: 0.9558135281006496
+==========
+Name:              25-08-22-07-08-16_artifact_0.001_0.02
+Num grasps:        251
+Success rate:      23.107569721115535
+Percent cleared:   23.387096774193548
+Avg planning time: 0.9680416090079987
+==========
+Name:              25-08-22-07-19-19_artifact_0.05_0.02
+Num grasps:        252
+Success rate:      19.444444444444446
+Percent cleared:   19.758064516129032
+Avg planning time: 0.9158533035762726
+==========
+Name:              25-08-22-07-30-14_artifact_0.1_0.02
+Num grasps:        253
+Success rate:      14.624505928853754
+Percent cleared:   14.919354838709678
+Avg planning time: 0.886594875999119
+==========
